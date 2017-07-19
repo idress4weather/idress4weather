@@ -58,47 +58,47 @@
 <!--link rel="stylesheet" href="css/style.css" NETU-->
 <style>
 #p{
-margin-top: 0;
+margin-top: 0 important;
 }
 
 #modal-container {
-position: fixed;
-background: #fff;
-width: 70%;
-max-width: 400px;
-border: 1px solid #000;
-left: 50%;
-padding: 20px;
-border-radius: 5px;
+position: fixed important;
+background: #fff important;
+width: 70% important;
+max-width: 400px important;
+border: 1px solid #000 important;
+left: 50% important;
+padding: 20px important;
+border-radius: 5px important;
 
 
--webkit-transform: translate(-50%,-200%);
--ms-transform: translate(-50%,-200%);
-transform: translate(-50%,-200%); 
+-webkit-transform: translate(-50%,-200%) important;
+-ms-transform: translate(-50%,-200%) important;
+transform: translate(-50%,-200%) important; 
 
-transition: transform 200ms ease-out;
-transition: transform 200ms ease-out;
+transition: transform 200ms ease-out important;
+transition: transform 200ms ease-out important;
 }
 
 #modal-container: before {
-content: "";
-position: fixed;
-display: none;
-background-color: rgba(0,0,0,.8);
-top: 0;
-left: 0;
-height: 100%;
-width: 100%;
+content: "" important;
+position: fixed important;
+display: none important;
+background-color: rgba(0,0,0,.8) important;
+top: 0 important;
+left: 0 important;
+height: 100% important;
+width: 100% important;
 }
 #modal: target: before {
-display: block;
+display: block important;
 }
 
 #modal: target #modal-container {
 	top: 20%
--webkit-transform: translate(-50%,0%);
--ms-transform: translate(-50%,0%);
-transform: translate(-50%,0%);
+-webkit-transform: translate(-50%,0%) important;
+-ms-transform: translate(-50%,0%) important;
+transform: translate(-50%,0%) important;
 }
 #modal-close{
 	
@@ -199,18 +199,19 @@ transform: translate(-50%,0%);
 <div id=pop style="position: relative; min-width: 320px; font-size: 16px; font-family: 'RobotoRegular', sans-serif;">
 <a href ="#cats">cats</a>
 <a href ="#dogs">dogs</a>
+	
 <!--tyt instruction or html -->	
 <div id="modal" id="cats">
 <div id="modal-container">
 <p id="p">I love cats</p>
-<a href ="#modal-close">close</a>
+<a href ="#page-top">close</a>
 
 </div></div>
 
 <div id="modal" id="dogs">
 <div id="modal-container">
 <p id="p">I love dogs</p>
-<a href ="#modal-close">close</a>
+<a href ="#page-top">close</a>
 
 </div></div>				
 <style>
