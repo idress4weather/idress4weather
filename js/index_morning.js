@@ -76,15 +76,15 @@ success: function(msg){
       dataType: 'json',
       success: function(response) {
         var location = response.location;
-        var current = response.current;
+        var current = response.forecast;
         $('.location').text(location.name + ', ' + location.country);
-        $('.temp_c').html(current.temp_c  + '<a class="cel"> ºC</a>');
-        $('.temp_f').html(current.temp_f  + '<a class="fah"> ºF</a>');
+        $('.temp_c').html(forecast.temp_c  + '<a class="cel"> ºC</a>');
+        $('.temp_f').html(forecast.temp_f  + '<a class="fah"> ºF</a>');
 
-	$('.wind_dir').html(current.wind_dir);
+	$('.wind_dir').html(forecast.wind_dir);
       
-        $('.text').text(current.condition.text);
-        $('.icon').attr('src', current.condition.icon);
+        $('.text').text(forecast.condition.text);
+        $('.icon').attr('src', forecast.condition.icon);
       
 	      
 // 	 function K2F(k){
@@ -95,8 +95,8 @@ success: function(msg){
 //     return Math.round(k - 273.15);
 // }       
 	      
-var f = Math.round(current.feelslike_f);
-var c = Math.round(current.feelslike_c); 	      
+var f = Math.round(forecast.feelslike_f);
+var c = Math.round(forecast.feelslike_c); 	      
 var nextButton = document.getElementById('next-button');    
           
 var userFeed = new Instafeed({
