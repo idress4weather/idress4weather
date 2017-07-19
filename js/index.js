@@ -616,7 +616,8 @@ userFeed.run();
   
   // Initially, temp. is shown in celsius
   $('.temp_f').hide();
-	$('.feelslike_f').hide();
+  $('.feelslike_f').hide();
+  $('.wind_mph').hide();
   
   // code for toggling temp. (celsius/fahrenheit)
   $('.temp_c, .temp_f').on('click', 'a', function(event) {
