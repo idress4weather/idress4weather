@@ -65,10 +65,10 @@ $(function() {
 	$('.feelslike_c').html(current.feelslike_c  + '<a class="cel"> ºC</a>');
         $('.feelslike_f').html(current.feelslike_f  + '<a class="fah"> ºF</a>');
 
-	$('.wind_dir').html(current.wind_dir);
-        $('.wind_kph').html(Math.round((current.wind_kph)* 0.27777777777778)  + '<a class="cel"> mitres/h</a>');
+	$('.wind_dir'+'.wind_kph'+'.wind_mph').html(current.wind_dir + Math.round((current.wind_kph)* 0.27777777777778)  + '<a class="cel"> mitres/h</a>' + Math.round(current.wind_mph)  + '<a class="fah"> miles/h</a>');
+        /*$('.wind_kph').html(Math.round((current.wind_kph)* 0.27777777777778)  + '<a class="cel"> mitres/h</a>');
         $('.wind_mph').html(Math.round(current.wind_mph)  + '<a class="fah"> miles/h</a>');
-
+*/
         $('.text').text(current.condition.text);
         $('.icon').attr('src', current.condition.icon);
       
