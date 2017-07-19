@@ -80,9 +80,14 @@ success: function(msg){
         $('.location').text(location.name + ', ' + location.country);
         $('.temp_c').html(forecast.temp_c  + '<a class="cel"> ºC</a>');
         $('.temp_f').html(forecast.temp_f  + '<a class="fah"> ºF</a>');
+	$('.feelslike_c').html(forecast.feelslike_c  + '<a class="cel"> ºC</a>');
+        $('.feelslike_f').html(forecast.feelslike_f  + '<a class="fah"> ºF</a>');
 
-	$('.wind_dir').html(forecast.wind_dir);
-      
+	/*('.wind_dir' + '.wind_kph' + '.wind_mph').html(current.wind_dir + Math.round((current.wind_kph)* 0.27777777777778)  + '<a class="cel"> mitres/h</a>' + Math.round(current.wind_mph)  + '<a class="fah"> miles/h</a>');
+        */$('.wind_dir').html(forecast.wind_dir);
+	$('.wind_kph').html(Math.round(forecast.wind_kph* 0.27777777777778)  + '<a class="cel"> m/s</a>');
+        $('.wind_mph').html(Math.round(forecast.wind_mph)  + '<a class="fah"> mph</a>');
+
         $('.text').text(forecast.condition.text);
         $('.icon').attr('src', forecast.condition.icon);
       
@@ -628,7 +633,9 @@ userFeed.run();
   }
   
   // Initially, temp. is shown in celsius
-  $('.temp_f').hide();
+ $('.temp_f').hide();
+  $('.feelslike_f').hide();
+  $('.wind_mph').hide();
   
   // code for toggling temp. (celsius/fahrenheit)
   $('.temp_c, .temp_f').on('click', 'a', function(event) {
@@ -641,4 +648,25 @@ userFeed.run();
       $('.temp_c').show();
     }
   });
+	$('.feelslike_c, .feelslike_f').on('click', 'a', function(event) {
+    event.preventDefault();
+    if(event.target.className === 'cel') {
+      $('.feelslike_c').hide();
+      $('.feelslike_f').show();
+    } else {
+      $('.feelslike_f').hide();
+      $('.feelslike_c').show();
+    }
+  });
+	
+	$('.wind_kph, .wind_mph').on('click', 'a', function(event) {
+    event.preventDefault();
+    if(event.target.className === 'cel') {
+      $('.wind_kph').hide();
+      $('.wind_mph').show();
+    } else {
+      $('.wind_mph').hide();
+      $('.wind_kph').show();
+    }
+  });	
 });
