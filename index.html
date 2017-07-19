@@ -61,7 +61,7 @@ p{
 margin-top: 0;
 }
 
-.modal-container {
+#modal-container {
 position: fixed;
 background: #fff;
 width: 70%;
@@ -80,7 +80,7 @@ transition: transform 200ms ease-out;
 transition: transform 200ms ease-out;
 }
 
-.modal-container: before {
+#modal-container: before {
 content: "";
 position: fixed;
 display: none;
@@ -90,17 +90,18 @@ left: 0;
 height: 100%;
 width: 100%;
 }
-.modal: target: before {
+#modal: target: before {
 display: block;
 }
 
-.modal: target .modal-container {
+#modal: target #modal-container {
 	top: 20%
 -webkit-transform: translate(-50%,0%);
 -ms-transform: translate(-50%,0%);
 transform: translate(-50%,0%);
 }
 #modal-close{}
+	#pop {}	
 	</style>
 
 
@@ -182,18 +183,18 @@ transform: translate(-50%,0%);
 <!--br><span><a href="https://idress4weather.github.io/" target="popup" onclick="window.open('https://idress4weatherinnadanylevska.github.io/idress4weatherinnadanylevska/','popup','width=600,height=600'); return false;">__CURRENT__</a></span-->			
 				
  <br><span><a href="#" title="Current weather picture">__CURRENT__</a></span>
- <span><a href="#Morning" title="Morning forecast picture">__Morning__</a></span>
+ <span><a href="#Morning" title="Morning forecast pictures">__Morning__</a></span>
  <!--span><a href="https://idress4weatherinnadanylevska.github.io/morning/" target="popup" onclick="window.open('https://idress4weather.github.io/morning','popup','width=600,height=600'); return false;">__Morning__</a></span>			
 -->
- <span><a href="#Day" title="Day forecast picture">__All_Day__</a></span>
- <span><a href="#Evening" title="Evening forecast picture">__Evening__</a></span>
- <span><a href="#Night" title="Night forecast picture">__All_Night__</a></span>
+ <span><a href="#Day" title="Day forecast pictures">__All_Day__</a></span>
+ <span><a href="#Evening" title="Evening forecast pictures">__Evening__</a></span>
+ <span><a href="#Night" title="Night forecast pictures">__All_Night__</a></span>
  <span><a href="#INSTRUCTION" title="If you need the same site">__I WISH THE SAME__</a></span>
  
  
 				<br></p>
 			    
-<div style="position: relative; min-width: 320px; font-size: 16px; font-family: 'RobotoRegular', sans-serif;">
+<div id=pop style="position: relative; min-width: 320px; font-size: 16px; font-family: 'RobotoRegular', sans-serif;">
 <a href ="#cats">cats</a>
 <a href ="#dogs">dogs</a>
 <!--tyt instruction or html -->	
@@ -238,15 +239,15 @@ transform: translate(-50%,0%);
        
 <p id="weather" class="intro-text" style="margin-top: 50px; font-family: 'Quicksand', sans-serif; margin-right: 8px;"><br>____________________
 </div> 
-<div class="modal" id="cats">
-<div class="modal-container">
+<div id="modal" id="cats">
+<div id="modal-container">
 <p>I love cats</p>
 <a href ="#modal-close">close</a>
 
 </div></div>
 
-<div class="modal" id="dogs">
-<div class="modal-container">
+<div id="modal" id="dogs">
+<div id="modal-container">
 <p>I love dogs</p>
 <a href ="#modal-close">close</a>
 
