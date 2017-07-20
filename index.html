@@ -134,6 +134,9 @@ transform: translate(-50%,0%) important;
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+		    <li>
+                        <a class="page-scroll" href="#news"News</a>
+                    </li>
 		<li>	
 			<button type="button"  class="btn btn-default btn-lg" onclick="popup('popup.html', '', 800, 400);">FORECAST</button>
 		</li>	
@@ -228,6 +231,29 @@ function openbox(id, toggler) {
                         <strong></strong></a></h1><p>
                     <hr>
 			<div id="box" style="display: none !important;">
+				<form role="form">
+                        <div class="row">
+                            <div class="form-group col-lg-4">                                
+				<label>Name</label>
+                                <input type="text"  class="form-control" placeholder="Your new INSTAGRAM account" required>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Your new GMAIL account" required>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Password</label>
+                                <input type="tel" class="form-control" placeholder="12345admin" required >
+                            </div>
+                            <div class="clearfix"></div>
+                            
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="save" value="contact">
+                                <button type="submit" class="btn btn-default">!Go</button>
+				    
+                            </div>
+                        </div>
+                    </form>
 <p>1.
 <br>Creating New INSTAGRAM Account & New GMAIL Account
 <br>WITH
@@ -265,29 +291,7 @@ function openbox(id, toggler) {
 			
 			
 			
-				<form role="form">
-                        <div class="row">
-                            <div class="form-group col-lg-4">                                
-				<label>Name</label>
-                                <input type="text"  class="form-control" placeholder="Your new INSTAGRAM account" required>
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <label>Email Address</label>
-                                <input type="email" class="form-control" placeholder="Your new GMAIL account" required>
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <label>Password</label>
-                                <input type="tel" class="form-control" placeholder="12345admin" required >
-                            </div>
-                            <div class="clearfix"></div>
-                            
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">!Go</button>
-				    
-                            </div>
-                        </div>
-                    </form>
+				
                 </div>
             </div>
         </div>
