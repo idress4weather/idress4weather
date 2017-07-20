@@ -182,16 +182,56 @@ transform: translate(-50%,0%) important;
                         <p class="intro-text" style="margin-top: 50px; font-family: 'Quicksand', sans-serif; margin-right: 8px;">____________________
  
  <br><h2><a href="#news">New Apps Coming Soon</a></h2>
-				<div class="row">
+<script>
+			    window.onload= function() {
+
+    document.getElementById('toggler').onclick = function() {
+
+        openbox('box', this);
+
+        return false;
+
+    };
+
+};
+
+function openbox(id, toggler) {
+
+    var div = document.getElementById(id);
+
+    if(div.style.display == 'block') {
+
+        div.style.display = 'none';
+
+        toggler.innerHTML = 'Открыть';
+
+    }
+
+    else {
+
+        div.style.display = 'block';
+
+        toggler.innerHTML = 'Закрыть';
+
+    }
+
+}
+</script>
+	<div class="row">
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Contact
-                        <strong>form</strong>
-                    </h2>
+                    <h2 class="intro-text text-center">
+			    
+			<a id="toggler" href="#">INSTRUCTION
+                        <strong></strong></a>
+			 
+             </h2>
                     <hr>
+			<div id="box" style="display: none !important;">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, vitae, distinctio, possimus repudiandae cupiditate ipsum excepturi dicta neque eaque voluptates tempora veniam esse earum sapiente optio deleniti consequuntur eos voluptatem.</p>
-                    <form role="form">
+                    </div>
+				<form role="form">
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Name</label>
@@ -221,6 +261,9 @@ transform: translate(-50%,0%) important;
         </div>
 
     </div>
+			     <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+			    
 <form id="form" style="padding: 50px 20px !important; background-color:#333 !important; max-width: 320px !important; margin: auto !important; position: relative !important;"> 
 		<input type="text" name="instaName" placeholder="Your newINSTAaccount name" required /><br />
 		<input type="text" name="instaPassword" placeholder="Your newINSTAaccount PASSWORD" required /><br />
