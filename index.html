@@ -165,7 +165,7 @@ transform: translate(-50%,0%) important;
                         <a class="page-scroll" href="#instruction">Instruction</a>
                     </li>			
                     <li>
-                        <a class="page-scroll" href="#i wish it">I wish it</a>
+                        <a class="page-scroll" href="#i_wish_it">I wish it</a>
                     </li>
                   		  
 
@@ -174,7 +174,7 @@ transform: translate(-50%,0%) important;
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                                 <li>
-                        <a class="page-scroll" href="#new apps">New apps</a>
+                        <a class="page-scroll" href="#new_apps">New apps</a>
                     </li>	
 		    <li>
                         <a class="page-scroll" href="#map">Map</a>
@@ -370,56 +370,46 @@ margin: auto;
 </style>
    
 
-    <!-- News Section -->
-    <section id="i_wish_it" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-             
-            <!--button type="button"  class="btn btn-default btn-lg" onclick="popup('popup.html', '', 800, 400);">NEW APPS COMING SOON</button-->
-        
 
-            <p>1.
-<br>Creating 
-<br>new Instagram account 
-<br>WITH
-<br>new Instagram login 
-<br>WITH 
-<br>temporary password 12345admin 
+<script>
+ window.onload= function() {
 
-<br>2.
-<br>Send your new Instagram Login 
-<br>TO  
-<br>innadanylevska@gmail.com
-    
-<br>3.
-<br>You MUST to mark your Instagram photo with a current weather #25 #26 #27
-<br>4.
-<br>!!!After 7 days 
-<br>!!you will start with us
-                <!--coffe php + db-->
- 
+    document.getElementById('toggler').onclick = function() {
 
-            <!--button type="button"  class="btn btn-default btn-lg" onclick="popup('popup.html', '', 800, 400);">I WISH THE SAME APP</button-->
-        
+        openbox('box', this);
 
-<!--#download-->
-		     <!--a href="#download" class="btn btn-circle page-scroll">
-                      <i class="fa fa-angle-double-down animated"></i>
-                     </a-->
+        return false;
 
-			 
-	
-		   
+    };
 
-		 
-		<!--p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p><a href="https://startbootstrap.com/template-overviews/grayscale/</a> Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p-->
-            </div>
-        </div>
-    </section>
+};
+
+function openbox(id, toggler) {
+
+    var div = document.getElementById(id);
+
+    if(div.style.display == 'block') {
+
+        div.style.display = 'none';
+
+        toggler.innerHTML = 'Open instuction';
+
+    }
+
+    else {
+
+        div.style.display = 'block';
+
+        toggler.innerHTML = 'Close';
+
+    }
+
+}
+</script>
+            
 
     <!-- Download Section -->
-    <section id="" class="content-section text-center">
+    <section id="i_wish_it" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -427,10 +417,42 @@ margin: auto;
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Contact
-                        <strong>IF YOU WISH THE SAME APP</strong>
-                    </h2>
-                    <hr>
+			<p  style = 'cursor: pointer; margin-top: 3px !Important;'><h1><a id="toggler"  
+				 href="#" title="Click what to do">Contact
+                        IF YOU WISH THE SAME APP</a></h1><p>
+                   
+		    <hr>				 
+<h5><p>1. Create 
+<br>new Instagram account 
+<br>WITH
+<br>new Instagram login 
+<br>WITH 
+<br>temporary password 12345admin 
+
+<br>2. Send
+<br> your new Instagram Login 
+<br>TO  
+<br>us
+    
+<br>3. Mark
+<br>your Instagram photo 
+<br>WITH 
+<br>current weather #25 #26 #27
+							 
+<br>4. Tomorrow 
+<br>you will start with us
+</p></h5>				 
+		   </div>
+            </div>
+        </div>
+
+    </div>
+			     <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>		
+<style>
+                  
                     <p></p>
                     <form role="form">
                         <div class="row">
@@ -534,7 +556,7 @@ margin: auto;
             </div>
         </div>
     </section>
-	 <div id="new apps coming soon" class="container">
+	 <div id="new_apps" class="container">
 
         <div class="row">
             <div class="box">
@@ -569,15 +591,15 @@ margin: auto;
                         </a>
                     </div>
                     <h2 class="brand-before">
-                        <small>Welcome to</small>
+                        <small>Welcome to us</small>
                     </h2>
-                    <h1 class="brand-name">Business Casual</h1>
+                    <!--h1 class="brand-name">Business Casual</h1>
                     <hr class="tagline-divider">
                     <h2>
                         <small>By
                             <strong>Start Bootstrap</strong>
                         </small>
-                    </h2>
+                    </h2-->
                 </div>
             </div>
         </div>					     
