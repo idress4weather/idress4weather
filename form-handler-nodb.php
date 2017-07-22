@@ -2,13 +2,13 @@
 // Emails form data to you and the person submitting the form
 // This version requires no database.
 // Set your email below
-$myemail = "ENTER_YOUR_EMAIL_HERE"; // Replace with your email, please
+$myemail = "innadanylevska@gmail.com"; // Replace with your email, please
 
 // Receive and sanitize input
 $name = $_POST['name'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
-$message = $_POST['message'];
+/*$message = $_POST['message'];*/
 
 // set up email
 $msg = "New contact form submission!\nName: " . $name . "\nEmail: " . $email . "\nPhone: " . $phone . "\nEmail: " . $email;
