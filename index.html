@@ -221,7 +221,7 @@
 <section>  
     <div class="block7-content-pic-pic-pic clearfix">
         <div class="block7-inner-content-pic-pic-pic">
-            <div class="row">
+            <div class="block7-row">
                 <div class="content50-pic-pic-pic">
                     <div class="inner-content50-pic-pic-pic">
                     <img src="img/slide-1.jpg" alt="">
@@ -245,7 +245,7 @@
 <section>  
     <div class="block8-content-pic-pic-pic clearfix">
         <div class="block8-inner-content-pic-pic-pic">
-            <div class="row">
+            <div class="block8-row">
                 <div class="content25-pic-pic-pic">
                     <div class="inner-content25-pic-pic-pic">
                     <img src="img/slide-1.jpg" alt="">
@@ -269,9 +269,9 @@
 <section>  
     <div class="block9-content-pic-pic-pic clearfix">
         <div class="block9-inner-content-pic-pic-pic">
-            <div class="row">
-                <div class="content25-pic-pic-pic">
-                    <div class="inner-content25-pic-pic-pic">
+            <div class="block9-row">
+                <div class="content50-pic-pic-pic">
+                    <div class="inner-content50-pic-pic-pic">
                     <img src="img/slide-1.jpg" alt="">
                     </div> 
                 </div>
@@ -280,8 +280,8 @@
                     <img src="img/slide-1.jpg" alt="">                    
                     </div>
                 </div>
-                <div class="content50-pic-pic-pic">
-                    <div class="inner-content50-pic-pic-pic">
+                <div class="content25-pic-pic-pic">
+                    <div class="inner-content25-pic-pic-pic">
                     <img src="img/slide-1.jpg" alt="">            
                     </div>
                 </div>   
@@ -331,20 +331,20 @@
 <section>
     <div class="block11-logo-section-upsl-logo-critical-text clearfix">
         <div class="example2">
-           <div class="row">
+           <div class="block11-row">
              <div class="content64-pic-pic-pic">
                     <div class="inner-content64-pic-pic-pic">
-                        <img src="img/slide-1.jpg" alt="">
+                        <img src="">
                             <span><div class="block11-logo">
                             <img src="img/logo.png" alt="logo">
                             </div></span>
-                            <span>Critical Power Ap</span>    
+                            <span><div class="block11-block2-static-info-l"><div class="block11-title">Critical Power Ap</div></div></span>    
                     </div> 
               </div>
               <div class="content36-pic-pic-pic">
                     <div class="inner-content36-pic-pic-pic">
                         <img src="img/slide-1.jpg" alt="">
-                            <span>plications</span>    
+                            <span><div class="block11-block2-static-info-l"><div class="block11-title">plications</div></div></span>    
                     </div>
                </div>
            </div>
@@ -358,7 +358,7 @@
         <div class="block12-inner-content-pic-pic-pic">
                 <div class="content1-pic-pic-pic clearfix">
                     <div class="inner-content1-pic-pic-pic">
-                    <img src="img/logo-1.png" alt="logo-1">
+                    <img src="img/logo-1.png alt="logo-1">
                 </div> 
                 <div class="content2-pic-pic-pic clearfix">
                     <div class="inner-content2-pic-pic-pic">
@@ -478,17 +478,22 @@ a:hover{
 .clearfix:after{
     clear: both;
 }
-    .row:after{
+    .block7-row, .block8-row, .block9-row, .block11-row: after{
     visibility: hidden;
         display: block;
         font-size: 0;
         content: " ";
         clear: both;
         height: 0; 
-    }   
-    .row{ display: inline-block; }
-    .html . row { height: 1% }
-    .row { display: block; }
+    }
+                    
+    .block7-row, .block8-row, .block9-row, .block11-row { display: inline-block; }
+                    
+    .html . block7-row, .block8-row, .block9-row { height: 1% }                
+    .html . block11-row { height: 0.25% }
+                    
+    .block7-row, .block8-row, .block9-row, .block11-row { display: block; }
+                    
 /*    HEADER   */
 .contacts-information{
     background: #ededed;
@@ -825,6 +830,24 @@ nav li a:hover{
     background: #3e302e;
     padding: 70px 100px;
 }
+
+.block11-logo{
+    float: left;
+}
+.block11-block2-static-info-r{
+    float: right;
+    margin-top: 17px;
+}
+.block11-block2-static-info-l{
+    float: left;
+    margin-top: 17px;
+}                    
+
+.block11-title{
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}                    
 .example2 {
     display:inline-block;   
     position:relative;
@@ -842,7 +865,7 @@ nav li a:hover{
     font-size:20px; 
      
     /* Фон for text*/
-    background-color:rgba(0,0,0,.4);
+    background-color:/*rgba(0,0,0,.4)*/none;
     padding:10px 30px;
 }
     .block11-content-pic-pic-pic{
@@ -920,11 +943,11 @@ nav li a:hover{
     border-bottom: 6px solid #bd2631;
 
 }
-/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++7right / */
-/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++7right-middle 6 */
-/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++7middle 6/ */
-/*  BLOCK7lm/++++++++++++++++++++++++++++++++++++++++7left-middle 6/ */
-/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++7left 6/ */
+/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7lm/+++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++*/
 
 /********************************************************14/
 /*  BLOCK14  */
@@ -940,11 +963,11 @@ nav li a:hover{
     margin-left: 20px;
 }
 
-/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++7right / */
-/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++7right-middle 6 */
-/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++7middle 6/ */
-/*  BLOCK7lm/++++++++++++++++++++++++++++++++++++++++7left-middle 6/ */
-/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++7left 6/ */
+/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7m /+++++++++++++++++++++++++++++++++++++++*/
+/*  BLOCK7lm/+++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++*/
 
 /********************************************************15/
 /*  BLOCK15  */
@@ -959,11 +982,11 @@ nav li a:hover{
 .before-footer-social-icons ul li{
     margin-left: 20px;
 }
-/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++7right / */
-/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++7right-middle 6 */
-/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++7middle 6/ */
-/*  BLOCK7lm/++++++++++++++++++++++++++++++++++++++++7left-middle 6/ */
-/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++7left 6/ */
+/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++*/
+/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7lm/++++++++++++++++++++++++++++++++++++++++ */
+/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++ */
 
 /********************************************************16/
 /*  BLOCK16  */
