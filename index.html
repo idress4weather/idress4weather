@@ -490,7 +490,7 @@ a:hover{
     .block7-row, .block8-row, .block9-row, .block11-row { display: inline-block; }
                     
     .html . block7-row, .block8-row, .block9-row { height: 1% }                
-    .html . block11-row { height: 0.25% }
+    .html . block11-row { height: 70px }
                     
     .block7-row, .block8-row, .block9-row, .block11-row { display: block; }
                     
@@ -828,52 +828,51 @@ nav li a:hover{
     
 .block11-logo-section-upsl-logo-critical-text{
     background: #3e302e;
-    padding: 70px 100px;
+    padding: 0;
 }
-
-.block11-logo{
-    float: left;
-}
-.block11-block2-static-info-r{
-    float: right;
-    margin-top: 17px;
-}
-.block11-block2-static-info-l{
-    float: left;
-    margin-top: 17px;
-}                    
-
-.block11-title{
-    color: #333;
-    font-weight: 600;
-    font-size: 15px;
-}                    
 .example2 {
     display:inline-block;   
     position:relative;
  
 }
+.block11-logo{
+    float: left;
+    display:inline-block;
+    position:absolute;                 
+}                    
 .example2 span {
     display:inline-block;
     position:absolute;
     top:30px;   
     left:0px;
      
-    /* Оформление текста */
+   
+}
+ .example2 span block11-block2-static-info-r{
+    float: right;
+    margin-top: 17px;
+                  
+}
+.example2 span block11-block2-static-info-l{
+    float: left;
+    margin-top: 17px;
+                   
+} 
+ .example2 span block11-title{                   
+ /* Оформление текста */
     color:#FFF;
     font-family:Arial, Helvetica, sans-serif;
-    font-size:20px; 
+    font-size:20px;
+    font-weight: 600;                
      
     /* Фон for text*/
     background-color:/*rgba(0,0,0,.4)*/none;
-    padding:10px 30px;
-}
-    .block11-content-pic-pic-pic{
+    padding:10px 30px; 
+ }
+                    
+.block11-content-pic-pic-pic{
     background: #000;
-    padding: 0px 100px;
     
-    
-
 }
 .block11-inner-content-pic-pic-pic{
     
@@ -884,7 +883,7 @@ nav li a:hover{
     .content64-pic-pic-pic{
     width: 64%;
     float:left;
-    /*padding-right: 10px;*/
+    
 }
 .inner-content64-pic-pic-pic{
 /*background: url(img/);*/
@@ -892,7 +891,7 @@ nav li a:hover{
 .content36-pic-pic-pic{
     width: 36%;
     float:right;
-    /*padding-right: 10px;*/
+    /*padding-left: 10px;*/
 }
 .inner-content36-pic-pic-pic{
 /*background: url(img/);*/
