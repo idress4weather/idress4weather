@@ -589,7 +589,11 @@ font-size:12px /*размер иконки 12 пикселей в ширину �
 .navigation{
     background: #000;
     padding: 0 100px;
+                    
 }
+ .menu { 
+     position: relative;                   
+ }                   
 .navigation nav{
     float: left;
 }
@@ -620,7 +624,8 @@ nav li a:hover{
 /*  BLOCK4 slider bar */
 .block4-static-info-carusel{
     float: right;
-    margin-top: 17px;
+    
+    position: absolute;                
 }
 
 /********************************************************5/
@@ -848,19 +853,15 @@ nav li a:hover{
 .example2 span {
     display:inline-block;
     position:absolute;
-    top:140px;   
-    left:140px;
-     
-   
+    top:140px;
 }
  .example2 span block11-block2-static-info-r{
-    float: right;
-    
-                  
+    float: right;      
+    right: 140px;                
 }
 .example2 span block11-block2-static-info-l{
-    float: left;
-    
+    float: left;     
+    left: 140px;
                    
 } 
  .example2 span block11-title{                   
