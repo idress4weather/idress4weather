@@ -1,3 +1,5 @@
+/*--no-cache --update $FileName$:$FileNameWithoutExtension$.min.css --style compressed*/
+--no-cache --update $FileName$:$FileNameWithoutExtension$.css
 @import 'bourbon';
 /*---- NUMBER OF SLIDE CONFIGURATION ----*/
 $num-of-slide: 5;
