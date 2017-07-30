@@ -10,7 +10,7 @@ require "includes/config.php"
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title><?php echo $config['title']?></title>
+    <title><!--?php echo $config['title']?--></title>
     <link rel="stylesheet" href="$css/style$.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
@@ -40,55 +40,41 @@ require "includes/config.php"
             </div>
         </div>
         <div class="social-icons">
-        <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
-             <?php
+        
+             <!--?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
-                <li><a href="<?php echo $config['envelope_url']; ?>" target="blank><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li><a href="<?php echo $config['youtube_url']; ?>" target="blank><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                <li><a href="<?php echo $config['google_url']; ?>" target="blank><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="<?php echo $config['linkedin_url']; ?>" target="blank><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="<?php echo $config['twitter_url']; ?>" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="current"><a href="/"><!--?php echo $config['social-urls'] ?--></a></li>
+                <li><a href="<#>" target="blank><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a href="<#>" target="blank><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="<#>" target="blank><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="<#>" target="blank><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="<#>" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             </ul>
+            <!--?php
+                }
+                ?-->
         </div>
-    </div>
+    </div>!--
     <!--2-bg#ffffff-->
-    <?php 
+    <!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
     <div class="block2-logo-section clearfix">
         <div class="logo">
             <a href="/"><img src="img/logo.png" alt="logo"></a>
         </div>
         <div class="block2-static-info">
-        <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
-             <?php
+        <!--<?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
@@ -115,26 +101,29 @@ require "includes/config.php"
                     </p>
                 </li>
             </ul>
+             <!--?php
+                }
+                ?-->
         </div>
     </div>
     <!--4-bg#040303-->
-    <?php 
+    <!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block-4_categories` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
     <div class="block3 navigation clearfix">
       <div>
         <nav>
 
       
-            <?php
+            <!--?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
                 <li class="current"><a href="/">Home</a></li>
                 <li><a href="/pages/about.php">About</a></li>
                 <li><a href="/pages/Products">Products</a></li>
@@ -142,9 +131,9 @@ require "includes/config.php"
                 <li><a href="/pages/Rentals">Rentals</a></li>
                 <li><a href="/pages/Learning">Learning</a></li>
                 <li><a href="/pages/Contact">Contact</a></li>
-                <?php
+                <!--?php
                 }
-            ?>
+            ?-->
             </ul>
         </nav>
       <div>    
@@ -153,9 +142,9 @@ require "includes/config.php"
 </header>
 
 <!--4-carusel*********************************************-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
    <div class="wrapper">
   <input checked type=radio name="slider" id="slide1" />
   <input type=radio name="slider" id="slide2" />
@@ -251,7 +240,9 @@ require "includes/config.php"
                 </div>
             </div>
         </div>
-
+             <!--?php
+                }
+                ?-->
     <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
@@ -261,22 +252,22 @@ require "includes/config.php"
 <!--5-text-first-last-->
 
 <!--6----bg#bd2631**t#fff**************************************-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block6_...` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>    
     <div class="block6-logo-section2-contacts-information1-text-nav  clearfix">
         <div class="left-text-static-info">
         <!--<p class="first-item"><br class="title">lorem<br class="subtitle">lorem></p>-->
-             <?php
+             <!--?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
                 <li>
                     <p class="block6-first-item">
                         <span class="block6-title">Reuest a Free Site Survey or Quote</span>
@@ -284,19 +275,21 @@ require "includes/config.php"
                     </p>
                 </li>
             </ul>
-
+             <!--?php
+                }
+                ?-->
         </div>    
         <div class="right-button">
             <a class="button" href="#">Get a Quote</button>
-            <!--orbutton>Get</button  wuth js click-->            
+            <!--o rbutton>Get a Quote</button  wuth js click-->            
         </div> 
     </div>
 </section>
 
 <!--7------pic-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>  
     <div class="block7-content-pic-pic-pic clearfix">
         <div class="block7-inner-content-pic-pic-pic">
@@ -345,9 +338,9 @@ require "includes/config.php"
     </div>
 </section>
 <!--9--pic-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>  
     <div class="block9-content-pic-pic-pic clearfix">
         <div class="block9-inner-content-pic-pic-pic">
@@ -372,30 +365,22 @@ require "includes/config.php"
     </div>
 </section>
 <!--10-bg#fffdfe-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
         <div class="block10-static-info-sgr clearfix">
         <div class="block10-sgr-item">
-        <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
+        <!--   
              <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
                 <li>
                     <p><span><img src="img/s-logo.png" alt="s-logo">
                     </span>
@@ -424,15 +409,17 @@ require "includes/config.php"
                     </p>                    
                 </li>
             </ul>
-
+             <!--?php
+                }
+                ?-->
         </div>
     
 
 </section>
 <!--11-bg#3e302e-NOT-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
     <div class="block11-logo-section-upsl-logo-critical-text clearfix">
         <div class="example2">
@@ -458,39 +445,33 @@ require "includes/config.php"
 
 </section>
 <!--12-pic url-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
     <div class="block12-content-pic-pic-pic-pic-pic clearfix" >
         <div class="block12-inner-content-pic-pic-pic-pic-pic">
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                    <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
+                    <!--
              <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
                 <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
                 <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
                 <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
                 <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
                 <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
             </ul>
-
+             <!--?php
+                }
+                ?-->
                      
             </div>
         </div>    
@@ -498,99 +479,81 @@ require "includes/config.php"
 </section>
 
 <!--13-bg#bd2631-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
     <div class="block13-static-info-dcs-cv-g-u-h clearfix">
 
         <nav>
-        <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
+        <!--
              <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
                
-                <li><a  class="dcs-cv-g-u-h-current href="#">Data Center Construction</a></li>
-                <li><a  class="dcs-cv-g-u-h-current href="#">College / University</a></li>
-                <li><a  class="dcs-cv-g-u-h-current href="#">Govermment</a></li>
-                <li><a  class="dcs-cv-g-u-h-current href="#">Utility</a></li>
-                <li><a  class="dcs-cv-g-u-h-current-last href="#">Healthcare</a></li>
+                <li><a  class="dcs-cv-g-u-h-current" href="#">Data Center Construction</a></li>
+                <li><a  class="dcs-cv-g-u-h-current" href="#">College / University</a></li>
+                <li><a  class="dcs-cv-g-u-h-current" href="#">Govermment</a></li>
+                <li><a  class="dcs-cv-g-u-h-current" href="#">Utility</a></li>
+                <li><a  class="dcs-cv-g-u-h-current-last" href="#">Healthcare</a></li>
             </ul>
+            <!--?php
+             }
+             ?-->                            
         </nav>
             
     </div>      
 
 </section>
 <!--14-bg#ffffff-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
     <div class="block14-contacts-information-logos clearfix" >
        <div class="logos-social-icons">
-       <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
+       <!--
              <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
-                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
                 <li><a href="#"><img src="" title=""></i></a></li>
                 <li><a href="#"><img src="" title=""></i></a></li>
                 <li><a href="#"><img src="" title=""></i></a></li>
                 <li><a href="#"><img src="" title=""></i></a></li>
                 <li><a href="#"><img src="" title=""></i></a></li>
             </ul>
+<!--?php
+}
+ ?-->
         </div> 
     </div>
 
 </section>
 <!--15-bg#242424-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
     <div class="block15-contacts-information-before-footer clearfix" >        
         <div class="block15-static-info">
-        <!--<ul>
-    <?php
-    include("db")
-        while( ($cat = mysqli_fetch_assoc($result)) )
-        {
-        echo'<li>' . $cat['title'] . '</li>';
-        }
-    ?>
-        </ul>-->
+        <!---
              <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
-                ?>
+                ?-->
 
         
             <ul>
@@ -654,13 +617,16 @@ require "includes/config.php"
                     </p>
                 </li>
             </ul>
+  <!--?php
+}
+ ?-->
         </div>
     </div>
 </section>
 <!--16-bg#131313-->
-<?php 
+<!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?>
+    ?-->
 <section>
     <div class="block16-footer">
         <div class="r-footer">
@@ -681,13 +647,13 @@ class="container"
     container
     width: 930px;
     border: 10px solid;
-    margin: 0 auto;{/*po centry*/
+    margin: 0 auto;{/*po centry
     }
     header{
-    background: url(../img/first-bg.jpg) no repeat center top / cover/*-rast na ecran/;
+    background: url(../img/first-bg.jpg) no repeat center top / cover;
     height: 600px;
-    }
-*/ 
+    }*/ 
+
 *{
     margin: 0;
     padding: 0;
