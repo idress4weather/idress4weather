@@ -1,3 +1,6 @@
+<?php
+require "includes/config.php"
+?>
 <!DOCTYPE html>
 
 
@@ -6,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Second lesson</title>
+    <title><?php echo $config['title']?></title>
     <link rel="stylesheet" href="$css/style$.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fontawesome/font-awesome.min.css">
@@ -20,6 +23,9 @@
 <body>
 <header>
     <!--1-#bgededed-->
+    <?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
     <div class="block1 contacts-information clearfix">
         <div class="address-block">
             <div class="city">
@@ -33,22 +39,59 @@
             </div>
         </div>
         <div class="social-icons">
+        <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
-                <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <li><a href="<?php echo $config['envelope_url']; ?>" target="blank><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $config['youtube_url']; ?>" target="blank><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $config['google_url']; ?>" target="blank><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $config['linkedin_url']; ?>" target="blank><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                <li><a href="<?php echo $config['twitter_url']; ?>" target="blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             </ul>
         </div>
     </div>
     <!--2-bg#ffffff-->
+    <?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
     <div class="block2-logo-section clearfix">
         <div class="logo">
-            <img src="img/logo.png" alt="logo">
+            <a href="/"><img src="img/logo.png" alt="logo"></a>
         </div>
         <div class="block2-static-info">
+        <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
                 <li>
                     <p class="block2-first-item"><i class="fa fa-check-circle-o" aria-hidden="true"></i></p>
                     <p>
@@ -73,18 +116,34 @@
             </ul>
         </div>
     </div>
-    <!--4--bg#040303-->
+    <!--4-bg#040303-->
+    <?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block-4_categories` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
     <div class="block3 navigation clearfix">
       <div>
         <nav>
+
+      
+            <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
-                <li class="current"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Rentals</a></li>
-                <li><a href="#">Learning</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <li class="current"><a href="/">Home</a></li>
+                <li><a href="/pages/about.php">About</a></li>
+                <li><a href="/pages/Products">Products</a></li>
+                <li><a href="/pages/Services">Services</a></li>
+                <li><a href="/pages/Rentals">Rentals</a></li>
+                <li><a href="/pages/Learning">Learning</a></li>
+                <li><a href="/pages/Contact">Contact</a></li>
+                <?php
+                }
+            ?>
             </ul>
         </nav>
       <div>    
@@ -93,6 +152,9 @@
 </header>
 
 <!--4-carusel*********************************************-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
    <div class="wrapper">
   <input checked type=radio name="slider" id="slide1" />
   <input type=radio name="slider" id="slide2" />
@@ -154,18 +216,18 @@
   </div>
   <!-- .slider-dot-control -->
 </div>
-            <!--div class="box">
+            <div class="box">
                 <div class="col-lg-12 text-center">
-                    <div id="carousel-example-generic" class="carousel slide">
+                    <div id="carousel-example-generic" class="carousel">
                         <!-- Indicators -->
-                        <!--ol class="carousel-indicators hidden-xs">
+                        <ol class="carousel-indicators hidden-xs">
                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
-                        <!--div class="carousel-inner">
+                        <div class="carousel-inner">
                             <div class="item active">
                                 <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
                             </div>
@@ -178,7 +240,7 @@
                         </div>
 
                         <!-- Controls -->
-                        <!--a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                             <span class="icon-prev"></span>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
@@ -193,16 +255,27 @@
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
-    </script-->
+    </script>
 </section>
 <!--5-text-first-last-->
 
 <!--6----bg#bd2631**t#fff**************************************-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block6_...` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>    
     <div class="block6-logo-section2-contacts-information1-text-nav  clearfix">
         <div class="left-text-static-info">
         <!--<p class="first-item"><br class="title">lorem<br class="subtitle">lorem></p>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
                 <li>
                     <p class="block6-first-item">
                         <span class="block6-title">Reuest a Free Site Survey or Quote</span>
@@ -213,13 +286,16 @@
 
         </div>    
         <div class="right-button">
-            <button>Get a Quote</button>
-            <!--orbutton>Get</button-->            
+            <a class="button" href="#">Get a Quote</button>
+            <!--orbutton>Get</button  wuth js click-->            
         </div> 
     </div>
 </section>
 
 <!--7------pic-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>  
     <div class="block7-content-pic-pic-pic clearfix">
         <div class="block7-inner-content-pic-pic-pic">
@@ -268,6 +344,9 @@
     </div>
 </section>
 <!--9--pic-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>  
     <div class="block9-content-pic-pic-pic clearfix">
         <div class="block9-inner-content-pic-pic-pic">
@@ -292,12 +371,32 @@
     </div>
 </section>
 <!--10-bg#fffdfe-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
         <div class="block10-static-info-sgr clearfix">
+        <div class="block10-sgr-item">
+        <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
 
+        
             <ul>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
                 <li>
-                    <p class="s-first-item"><span><img src="img/s-logo.png" alt="s-logo">
+                    <p><span><img src="img/s-logo.png" alt="s-logo">
                     </span>
                     <span class="sgr-title">Safe</span>
                     <span class="sgr-subtitle">CPR and forklift certified personnel
@@ -306,7 +405,7 @@
                     </p>
                 </li>
                 <li>
-                    <p class="g-first-item"><span><img src="img/s-logo.png" alt="g-logo">
+                    <p><span><img src="img/s-logo.png" alt="g-logo">
                     </span>
                     <span class="sgr-title">Green</span>
                     <span class="sgr-subtitle">Smelter facility for battery disposal
@@ -315,7 +414,7 @@
                     </p>                    
                 </li>
                 <li>
-                    <p class="r-first-item"><span><img src="img/s-logo.png" alt="r-logo">
+                    <p><span><img src="img/s-logo.png" alt="r-logo">
                     </span>
                     <span class="sgr-title">Ready</span>
                     <span class="sgr-subtitle">Toll free 24/7 emergency service line with
@@ -330,6 +429,9 @@
 
 </section>
 <!--11-bg#3e302e-NOT-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
     <div class="block11-logo-section-upsl-logo-critical-text clearfix">
         <div class="example2">
@@ -340,13 +442,13 @@
                             <span><div class="block11-logo">
                             <img src="img/logo.png" alt="logo">
                             </div></span>
-                            <span><div class="block11-block2-static-info-l"><div class="block11-title">Critical Power Ap</div></div></span>    
+                            <span><div class="block11-block2-static-info-l"><div class="block11-title">Critical Power Applications</div></div></span>    
                     </div> 
               </div>
               <div class="content36-pic-pic-pic">
                     <div class="inner-content36-pic-pic-pic">
                         <img src="img/slide-1.jpg" alt="">
-                            <span><div class="block11-block2-static-info-r"><div class="block11-title">plications</div></div></span>    
+                            <!--span><div class="block11-block2-static-info-r"><div class="block11-title"></div></div></span-->    
                     </div>
                </div>
            </div>
@@ -354,41 +456,72 @@
     </div>
 
 </section>
-<!--12--pic url-->
+<!--12-pic url-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
     <div class="block12-content-pic-pic-pic-pic-pic clearfix" >
-        <div class="block12-inner-content-pic-pic-pic">
-                <div class="content1-pic-pic-pic clearfix">
-                    <div class="inner-content1-pic-pic-pic">
-                    <img src="img/logo-1.png alt="logo-1">
-                </div> 
-                <div class="content2-pic-pic-pic clearfix">
-                    <div class="inner-content2-pic-pic-pic">
-                    <img src="img/logo-2.png" alt="logo-2">                    
-                </div>
-                <div class="content3-pic-pic-pic clearfix">
-                    <div class="inner-content3-pic-pic-pic">
-                    <img src="img/logo-3.png" alt="logo-3">            
-                </div> 
-                <div class="content4-pic-pic-pic clearfix">
-                    <div class="inner-content4-pic-pic-pic">
-                    <img src="img/logo-4.png" alt="logo-4">                    
-                </div>
-                <div class="content5-pic-pic-pic clearfix">
-                    <div class="inner-content5-pic-pic-pic">
-                    <img src="img/logo-5.png" alt="logo-5">            
-                </div>      
+        <div class="block12-inner-content-pic-pic-pic-pic-pic">
+                <div class="content20-pic-pic-pic-pic-pic">
+                    <div class="inner-content20-pic-pic-pic-pic-pic">
+                    <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
+            <ul>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
+                <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
+                <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
+                <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
+                <li><a href="#"><img src="img/logo-1.png" title=""></i></a></li>
+            </ul>
+
+                     
             </div>
         </div>    
     </div>
 </section>
 
 <!--13-bg#bd2631-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
     <div class="block13-static-info-dcs-cv-g-u-h clearfix">
 
         <nav>
+        <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
                
                 <li><a  class="dcs-cv-g-u-h-current href="#">Data Center Construction</a></li>
                 <li><a  class="dcs-cv-g-u-h-current href="#">College / University</a></li>
@@ -402,41 +535,81 @@
 
 </section>
 <!--14-bg#ffffff-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
     <div class="block14-contacts-information-logos clearfix" >
        <div class="logos-social-icons">
+       <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
-                <li><a href="#"><img src=""> class="fa fa-envelope" aria-hidden="true"></i></a></li>
-                <li><a href="#"><img src=""> class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                <li><a href="#"><img src=""> class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                <li><a href="#"><img src=""> class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="#"><img src=""> class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
+                <li><a href="#"><img src="" title=""></i></a></li>
+                <li><a href="#"><img src="" title=""></i></a></li>
+                <li><a href="#"><img src="" title=""></i></a></li>
+                <li><a href="#"><img src="" title=""></i></a></li>
+                <li><a href="#"><img src="" title=""></i></a></li>
             </ul>
         </div> 
     </div>
 
 </section>
-<!--15--bg#242424-->
+<!--15-bg#242424-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
-    <div class="block15-contacts-information-before-footer" >        
+    <div class="block15-contacts-information-before-footer clearfix" >        
         <div class="block15-static-info">
+        <!--<ul>
+    <?php
+    include("db")
+        while( ($cat = mysqli_fetch_assoc($result)) )
+        {
+        echo'<li>' . $cat['title'] . '</li>';
+        }
+    ?>
+        </ul>-->
+             <?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?>
+
+        
             <ul>
+                <li class="current"><a href="/"><?php echo $cat['title'] ?></a></li>
                 <li>
-                    
+                    <!--h3 class="block15-title"><a href="#">About Us</a><h3></h3><p><br></p-->
                     <p>
-                        <span class="block15-title"><a href="#">About Us</a></span>
+                        <a href="#"><span class="block15-title">About Us</span></a>
                         <br><span class="block15-subtitle">Supplier of superior quality stationary backup battery power products,
                             UPS rentals and services that maximize critical power integrity and customer satisfaction.
                             <br>
                             <br>Sure Power, Inc. is a leading distributor for the following battery power products:
-                            C&D Technologies, EnerSys and East Penn Manufacturing. Call today to find how we can help
+                            CD Technologies, EnerSys and East Penn Manufacturing. Call today to find how we can help
                             you and your organization with battery backup, UPS rentals and critical power system services.</span>
                     </p>
                 </li>
                 <li>
                    
                     <p>
-                        <span class="block15-title"><a href="#">Recent posts</a></span>
+                        <a href="#"><span class="block15-title">Recent posts</span></a>
                         <br>
                         <span class="block15-subtitle"><a href="#">UPS 101</a>
                             <br>
@@ -452,7 +625,7 @@
                  <li>
                    
                     <p>
-                        <span class="block15-title"><a href="#">Recent tweets</a></span>
+                        <a href="#"><span class="block15-title">Recent tweets</span></a>
                         <br>
                         <span class="block15-subtitle">Sure Power is 600 Days Injury Free-
                         <br>Https://t.co/3fjAz1RKUo
@@ -462,7 +635,7 @@
                 <li>
                     
                     <p>
-                        <span class="block15-title"><a href="#">Contact information</a></span>
+                        <a href="#"><span class="block15-title">Contact information</span></a>
                         <br>
                         <span class="block15-subtitle">Call-free: 800-455-0054
                         <br>    
@@ -484,8 +657,11 @@
     </div>
 </section>
 <!--16-bg#131313-->
+<?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?>
 <section>
-    <div class="block16-footer clearfix">
+    <div class="block16-footer">
         <div class="r-footer">
             <p>Copiright @ 2017 Sure Power Inc. All Rights Reserved. Employee Intranet<br></p>
         </div>
@@ -498,6 +674,19 @@
 
 
 <style type="text/css">
+    
+   /*
+class="container"
+    container
+    width: 930px;
+    border: 10px solid;
+    margin: 0 auto;{/*po centry*/
+    }
+    header{
+    background: url(../img/first-bg.jpg) no repeat center top / cover/*-rast na ecran/;
+    height: 600px;
+    }
+*/ 
 *{
     margin: 0;
     padding: 0;
@@ -524,6 +713,7 @@ a{
 }
 a:hover{
     color: #bd2631;
+    cursor: pointer;
 }
 .clearfix:after,
 .clearfix:before{
@@ -544,8 +734,8 @@ a:hover{
                     
     .block7-row, .block8-row, .block9-row, .block11-row { display: inline-block; }
                     
-    .html . block7-row, .block8-row, .block9-row { height: 1% }                
-    .html . block11-row { height: 1% }
+    .html . block7-row, .block8-row, .block9-row { height: 0% }                
+    .html . block11-row { height: 0% }
                     
     .block7-row, .block8-row, .block9-row, .block11-row { display: block; }
                     
@@ -741,8 +931,22 @@ nav li a:hover{
     border-radius: 3px;
     padding: 6px 16px;
 }
-    .button{
-    
+.button{
+background: #ffffff;
+color: #333;
+border-radius: 3px;
+display: block;
+width: 240px;
+padding: 20px 0;
+margin: 0 auto;
+text-decoration: none;
+text-align: center;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 18px;
+margin-top: 30px;
+
+
     }
 /*.right-button-city{
 
@@ -831,12 +1035,12 @@ nav li a:hover{
     background: #fffdfe;
     padding: 20px 100px;
 }
-.block10-static-info-sgr div{
-    float: right;
-                    
 
+.block10-sgr-item:{
+    float: left;
+    margin-right: 60px;
+    text-align: center;
 }
-
 .sgr-title{
     color: #333;
     font-weight: 600;
@@ -849,39 +1053,26 @@ nav li a:hover{
     font-size: 5px;
                   
 }
-/*  BLOCK10r /+++++++++++++++++++++++++++++++++++++++ */
-
-.block10-static-info-sgr li p:s-first-of-type{
+.block10-sgr-item li p:first-of-type{
     float: left;
     margin-right: 15px;
     color: #000;
     font-size: 18px;
 
 }
-
-/*  BLOCK7rm /+++++++++++++++++++++++++++++++++++++++ */
-/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++/ */
-.block10-static-info-sgr li p:g-second-of-type{
-    float: left;
-    margin-right: 15px;
-    color: #000;
-    font-size: 18px;
-
-}
-/*  BLOCK7lm/++++++++++++++++++++++++++++++++++++++++ */
-/*  BLOCK7l /+++++++++++++++++++++++++++++++++++++++ */
-.block10-static-info-sgr li p:r-last-of-type{
+.block10-sgr-item li p:last-of-type{
     display: inline-block;
 }
-.block10-static-info-sgr p > span{
+.block10-sgr-item p > span{
     display: block;
 }
-.block10-static-info-sgr ul li{
+.block10-sgr-item ul li{
     padding-right: 35px;
     text-align: center;
     margin-right: 20px;
+    
 }
-.block10-static-info-sgr ul li:r-last-of-type{
+.block10-sgr-item ul li:last-of-type{
     
     padding-right: 0;
     margin-right: 0;
@@ -932,30 +1123,30 @@ nav li a:hover{
     padding:10px 30px; 
  }
                     
-.block11-content-pic-pic-pic{
-    background: #000;
+.block11-content-nopic-pic{
+    background: none;
     
 }
-.block11-inner-content-pic-pic-pic{
+.block11-inner-content-nopic-pic{
     
     width: 100%;
     float:left;
     min-height: 350px;
 }
-    .content64-pic-pic-pic{
+    .content64-nopic{
     width: 64%;
     float:left;
     
 }
-.inner-content64-pic-pic-pic{
+.inner-content64-nopic{
 /*background: url(img/);*/
 }
-.content36-pic-pic-pic{
+.content36-pic{
     width: 36%;
     float:right;
     /*padding-left: 10px;*/
 }
-.inner-content36-pic-pic-pic{
+.inner-content36-pic{
 /*background: url(img/);*/
 }
     
@@ -969,8 +1160,20 @@ nav li a:hover{
 /********************************************************12/
 /*  BLOCK12  PIC*/
 .block12-content-pic-pic-pic-pic-pic{
-    background: url("img/");/**/
     padding: 0;
+}
+.block11-inner-content-pic-pic-pic-pic-pic{
+    
+    width: 100%;
+    float:left;
+    min-height: 350px;
+}
+.content20-pic-pic-pic-pic-pic{
+    width: 20%;
+    float:left;    
+}
+.inner-content20-pic-pic-pic-pic-pic{
+/*background: url(img/);*/
 }
 /*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++ */
 /*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
@@ -1003,18 +1206,14 @@ nav li a{
     border-bottom: 7px solid transparent;
 }
 nav li a:hover{
-    color: #333;
+    color: #222;
     border-bottom: 6px solid #bd2631;
 }
-.dcs-cv-g-u-h-current a{
-    border-bottom: 6px solid #bd2631;
+/*?????????????????????????????.dcs-cv-g-u-h-current a: last-child{
+    
+    margin: 0;
 
-}
-/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++ */
-/*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
-/*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++ */
-/*  BLOCK7lm/+++++++++++++++++++++++++++++++++++++++ */
-/*  BLOCK7l /++++++++++++++++++++++++++++++++++++++++*/
+}*/
 
 /********************************************************14/
 /*  BLOCK14  */
@@ -1023,12 +1222,14 @@ nav li a:hover{
     padding: 70px 100px;
 }
 .logos-social-icons{
-    float: right;
+    
+    float: left;
     margin-top: 7px;
 }
 .logos-social-icons ul li{
-    margin-left: 20px;
+    margin-right: 60px;
 }
+
 
 /*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++ */
 /*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
