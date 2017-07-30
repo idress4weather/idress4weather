@@ -145,109 +145,132 @@ require "includes/config.php"
 <!--?php 
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
     ?-->
-   <div class="wrapper">
-  <input checked type=radio name="slider" id="slide1" />
-  <input type=radio name="slider" id="slide2" />
-  <input type=radio name="slider" id="slide3" />
-  <input type=radio name="slider" id="slide4" />
-  <input type=radio name="slider" id="slide5" />
+   <style>
+       .carousel {
+  position: relative;
+  width: 398px;
+  padding: 10px 40px;
+  border: 1px solid #CCC;
+  border-radius: 15px;
+  background: #eee;
+}
 
-  <div class="slider-wrapper">
-    <div class=inner>
-      <article>
-        <div class="info top-left">
-          <h3>Malacca</h3></div>
-        <img src="https://farm9.staticflickr.com/8059/28286750501_dcc27b1332_h_d.jpg" />
-      </article>
+.carousel img {
+  width: 130px;
+  height: 130px;
+  /* по умолчанию inline, в ряде браузеров это даст лишнее пространство вокруг элементов */
 
-      <article>
-        <div class="info bottom-right">
-          <h3>Cameron Highland</h3></div>
-        <img src="https://farm6.staticflickr.com/5812/23394215774_b76cd33a87_h_d.jpg" />
-      </article>
+  display: block;
+}
 
-      <article>
-        <div class="info bottom-left">
-          <h3>New Delhi</h3></div>
-        <img src="https://farm8.staticflickr.com/7455/27879053992_ef3f41c4a0_h_d.jpg" />
-      </article>
+.arrow {
+  position: absolute;
+  top: 60px;
+  padding: 0;
+  background: #ddd;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  line-height: 24px;
+  color: #444;
+  display: block;
+}
 
-      <article>
-        <div class="info top-right">
-          <h3>Ladakh</h3></div>
-        <img src="https://farm8.staticflickr.com/7367/27980898905_72d106e501_h_d.jpg" />
-      </article>
+.arrow:focus {
+  outline: none;
+}
 
-      <article>
-        <div class="info bottom-left">
-          <h3>Nubra Valley</h3></div>
-        <img src="https://farm8.staticflickr.com/7356/27980899895_9b6c394fec_h_d.jpg" />
-      </article>
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.gallery {
+  width: 390px;
+  overflow: hidden;
+}
+
+.gallery ul {
+  height: 130px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  /* remove white-space between inline-block'ed li */
+  /* http://davidwalsh.name/remove-whitespace-inline-block */
+
+  font-size: 0;
+}
+
+.gallery li {
+  display: inline-block;
+}
+      </style> 
+  <div id="carousel" class="carousel">
+    <button class="arrow prev">⇦</button>
+    <div class="gallery">
+      <ul class="images">
+        <li><img src="https://js.cx/carousel/1.png"></li>
+        <li><img src="https://js.cx/carousel/2.png"></li>
+        <li><img src="https://js.cx/carousel/3.png"></li>
+        <li><img src="https://js.cx/carousel/4.png"></li>
+        <li><img src="https://js.cx/carousel/5.png"></li>
+        <li><img src="https://js.cx/carousel/6.png"></li>
+        <li><img src="https://js.cx/carousel/7.png"></li>
+        <li><img src="https://js.cx/carousel/8.png"></li>
+        <li><img src="https://js.cx/carousel/9.png"></li>
+        <li><img src="https://js.cx/carousel/10.png"></li>
+      </ul>
     </div>
-    <!-- .inner -->
+    <button class="arrow next">⇨</button>
   </div>
-  <!-- .slider-wrapper -->
 
-  <div class="slider-prev-next-control">
-    <label for=slide1></label>
-    <label for=slide2></label>
-    <label for=slide3></label>
-    <label for=slide4></label>
-    <label for=slide5></label>
-  </div>
-  <!-- .slider-prev-next-control -->
+  <script>
+    /* этот код помечает картинки, для удобства разработки */
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].style.position = 'relative';
+      var span = document.createElement('span');
+      // обычно лучше использовать CSS-классы,
+      // но этот код - для удобства разработки, так что не будем трогать стили
+      span.style.cssText = 'position:absolute;left:0;top:0';
+      span.innerHTML = i + 1;
+      lis[i].appendChild(span);
+    }
 
-  <div class="slider-dot-control">
-    <label for=slide1></label>
-    <label for=slide2></label>
-    <label for=slide3></label>
-    <label for=slide4></label>
-    <label for=slide5></label>
-  </div>
-  <!-- .slider-dot-control -->
-</div>
-            <div class="box">
-                <div class="col-lg-12 text-center">
-                    <div id="carousel-example-generic" class="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators hidden-xs">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        </ol>
+    /* конфигурация */
+    var width = 130; // ширина изображения
+    var count = 3; // количество изображений
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive img-full" src="img/slide-1.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-2.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-full" src="img/slide-3.jpg" alt="">
-                            </div>
-                        </div>
+    var carousel = document.getElementById('carousel');
+    var list = carousel.querySelector('ul');
+    var listElems = carousel.querySelectorAll('li');
 
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                            <span class="icon-prev"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                            <span class="icon-next"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-             <!--?php
-                }
-                ?-->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
+    var position = 0; // текущий сдвиг влево
+
+    carousel.querySelector('.prev').onclick = function() {
+      // сдвиг влево
+      // последнее передвижение влево может быть не на 3, а на 2 или 1 элемент
+      position = Math.min(position + width * count, 0)
+      list.style.marginLeft = position + 'px';
+    };
+
+    carousel.querySelector('.next').onclick = function() {
+      // сдвиг вправо
+      // последнее передвижение вправо может быть не на 3, а на 2 или 1 элемент
+      position = Math.max(position - width * count, -width * (listElems.length - count));
+      list.style.marginLeft = position + 'px';
+    };
+  </script>
 </section>
 <!--5-text-first-last-->
 
