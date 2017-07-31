@@ -107,7 +107,7 @@ require "includes/config.php"
         </div>
     </div>
     <!--4-bg#040303-->
-<div class="block4-static-info-carusel">     
+<div class="block4-carusel">     
   <div id="carousel" class="carousel">
     <button class="arrow prev">⇦</button>
     <div class="gallery">
@@ -128,7 +128,7 @@ require "includes/config.php"
   </div>
 </div>
   <script>
-    /* этот код помечает картинки, для удобства разработки */
+    /* этот код помечает картинки, для удобства разработки 
     var lis = document.getElementsByTagName('li');
     for (var i = 0; i < lis.length; i++) {
       lis[i].style.position = 'relative';
@@ -138,7 +138,7 @@ require "includes/config.php"
       span.style.cssText = 'position:absolute;left:0;top:0';
       span.innerHTML = i + 1;
       lis[i].appendChild(span);
-    }
+    }*/
 
     /* конфигурация */
     var width = 130; // ширина изображения
@@ -194,7 +194,7 @@ require "includes/config.php"
             ?-->
             </ul>
         </nav>         
-      <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
+      <div class="search"><i class="fa fa-search" aria-hidden="true" ></i></div>
     </div>
  </div>
 </header>
@@ -706,6 +706,7 @@ a:hover{
 .fa-phone,
 .fa-location-arrow{
     color: #000;
+    
 }
 .city{
     background: #000;
@@ -717,6 +718,8 @@ a:hover{
     margin-left: 15px;
     font-size: 18px;
     margin-top: 2px;
+    color: #fff;
+    cursor: pointer;
 }
 .mobile-menu{
     color: #fff;
@@ -808,11 +811,13 @@ nav li a:hover{
     color: #fff;
     line-height: 3.5;
     font-size: 19px;
+    cursor: pointer;
+    padding-left: 50px;
 }
 
 /********************************************************4/
 /*  BLOCK4 slider bar */
-.block4-static-info-carusel{
+.block4-carusel{
    background: #000;
     padding: 0;              
 }
