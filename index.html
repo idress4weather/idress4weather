@@ -475,16 +475,16 @@ require "includes/config.php"
     <div class="block12-content-pic-pic-pic-pic-pic clearfix" >
         <div class="block12-inner-content-pic-pic-pic-pic-pic">
             <div class="block12-row">
-                <div class="content20-pic-pic-pic-pic-pic">
-                    <div class="inner-content20-pic-pic-pic-pic-pic">
-                    <!--
+                <!--
                 <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
                 ?-->
-                        <img src="img/slide-1.jpg" alt="" title="">
-                    </div> 
+                <div class="content20-pic-pic-pic-pic-pic">
+                    <div class="inner-content20-pic-pic-pic-pic-pic">
+                        <img src="img/slide-1.jpg" alt="" title="">                    
+                    </div>
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
@@ -493,7 +493,8 @@ require "includes/config.php"
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                        <img src="img/slide-1.jpg" alt="" title="">            
+                        <img src="img/slide-1.jpg" alt="" title="">                    
+                    </div>
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
@@ -502,12 +503,9 @@ require "includes/config.php"
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                        <img src="img/slide-1.jpg" alt="" title=""> 
-                     </div>   
+                        <img src="img/slide-1.jpg" alt="" title="">                    
+                    </div>
                 </div>
-                    
-
-
                 <!--?php
                 }
                 ?-->
@@ -886,7 +884,7 @@ nav li a:hover{
 /*  BLOCK4 slider bar */
 .block4-static-info-carusel{
     margin: 0 auto;    
-    position: relative;                
+                 
 }
 
 /********************************************************5/
@@ -897,6 +895,7 @@ nav li a:hover{
 .block6-logo-section2-contacts-information1-text-nav{
     background: #bd2631;
     padding: 70px 100px;
+    
     
 }
 
@@ -978,6 +977,7 @@ margin-top: 30px;
 .block7-content-pic-pic-pic, .block8-content-pic-pic-pic, .block9-content-pic-pic-pic {
     background: none;
     padding: 0;
+    margin: 0 auto;
     
 }
 .block7-inner-content-pic-pic-pic, .block8-inner-content-pic-pic-pic, .block9-inner-content-pic-pic-pic{
@@ -1172,14 +1172,14 @@ margin-top: 30px;
 /********************************************************12/
 /*  BLOCK12  PIC*/
 .block12-content-pic-pic-pic-pic-pic{
-    
+    background: none;
     padding: 0;
 }
 .block12-inner-content-pic-pic-pic-pic-pic{
     
     width: 100%;
     float:left;
-    min-height: 350px;
+    min-height: 300px;
 }
 .content20-pic-pic-pic-pic-pic{
     width: 20%;
