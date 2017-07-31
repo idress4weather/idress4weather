@@ -107,77 +107,6 @@ require "includes/config.php"
         </div>
     </div>
     <!--4-bg#040303-->
-        
-   <style>
-       .carousel {
-  position: absolute;
-  width: 398px;
-  padding: 10px 40px;
-  border: 1px solid #CCC;
-  border-radius: 15px;
-  background: #000;
-}
-
-.carousel img {
-  width: 130px;
-  height: 130px;
-  /* по умолчанию inline, в ряде браузеров это даст лишнее пространство вокруг элементов */
-
-  display: block;
-}
-
-.arrow {
-  position: relative;
-  top: 60px;
-  padding: 0;
-  background: #ddd;
-  border-radius: 15px;
-  border: 1px solid gray;
-  font-size: 24px;
-  line-height: 24px;
-  color: #444;
-  display: block;
-}
-
-.arrow:focus {
-  outline: none;
-}
-
-.arrow:hover {
-  background: #ccc;
-  cursor: pointer;
-}
-
-.prev {
-  left: 7px;
-}
-
-.next {
-  right: 7px;
-}
-
-.gallery {
-  width: 390px;
-  overflow: hidden;
-}
-
-.gallery ul {
-  height: 130px;
-  width: 9999px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  transition: margin-left 250ms;
-  /* remove white-space between inline-block'ed li */
-  /* http://davidwalsh.name/remove-whitespace-inline-block */
-
-  font-size: 0;
-}
-
-.gallery li {
-  display: inline-block;
-}
-      </style> 
 <div class="block4-static-info-carusel">     
   <div id="carousel" class="carousel">
     <button class="arrow prev">⇦</button>
@@ -240,7 +169,7 @@ require "includes/config.php"
     $categories = mysqli_query($categories, "SELECT * FROM `block-4_categories` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
     ?-->
     <div class="block3 navigation clearfix" style="position: relative;">
-      <div class="menu">
+      <div class="menu-fixed-top">
         <nav>
 
       
@@ -848,12 +777,12 @@ font-size:12px /*размер иконки 12 пикселей в ширину �
 
 
 .navigation{
-    background: #000;
+    background: rgba(0, 0, 0, 0.5);
     padding: 0 100px;
                     
 }
-.menu { 
-    /* position: absolute;  */                 
+.menu-fixed-top { 
+    position: fixed;  */                 
 }                   
 .navigation nav{
     float: left;
@@ -885,10 +814,76 @@ nav li a:hover{
 /*  BLOCK4 slider bar */
 .block4-static-info-carusel{
    background: none;
-    padding: 0;
-                 
+    padding: 0;              
+}
+.carousel {
+  position: absolute;
+  width: 398px;
+  padding: 10px 40px;
+  border: 1px solid #CCC;
+  border-radius: 15px;
+  background: #000;
 }
 
+.carousel img {
+  width: 130px;
+  height: 130px;
+  /* по умолчанию inline, в ряде браузеров это даст лишнее пространство вокруг элементов */
+
+  display: block;
+}
+
+.arrow {
+  position: relative;
+  top: 60px;
+  padding: 0;
+  background: #ddd;
+  border-radius: 15px;
+  border: 1px solid gray;
+  font-size: 24px;
+  line-height: 24px;
+  color: #444;
+  display: block;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.arrow:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+.prev {
+  left: 7px;
+}
+
+.next {
+  right: 7px;
+}
+
+.gallery {
+  width: 390px;
+  overflow: hidden;
+}
+
+.gallery ul {
+  height: 130px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 250ms;
+  /* remove white-space between inline-block'ed li */
+  /* http://davidwalsh.name/remove-whitespace-inline-block */
+
+  font-size: 0;
+}
+
+.gallery li {
+  display: inline-block;
+}
 /********************************************************5/
 /*  BLOCK5 apsend */
 
@@ -1216,7 +1211,7 @@ nav li a{
     font-size: 16px;
     padding: 24px 16px 16px;
     display: inline-block;
-    text-transform: lowercase;
+    text-transform: ;/*perebyty uppercase bez lower v block 3*/
     border-bottom: 7px solid transparent;
 }
 nav li a:hover{
