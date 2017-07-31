@@ -474,6 +474,7 @@ require "includes/config.php"
 <section>
     <div class="block12-content-pic-pic-pic-pic-pic clearfix" >
         <div class="block12-inner-content-pic-pic-pic-pic-pic">
+            <div class="block12-row">
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
                     <!--
@@ -482,27 +483,29 @@ require "includes/config.php"
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
                 ?-->
-                    <img src="img/slide-1.jpg" alt="" title="">
+                        <img src="img/slide-1.jpg" alt="" title="">
                     </div> 
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                    <img src="img/slide-1.jpg" alt="" title="">                    
+                        <img src="img/slide-1.jpg" alt="" title="">                    
                     </div>
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                    <img src="img/slide-1.jpg" alt="" title="">            
+                        <img src="img/slide-1.jpg" alt="" title="">            
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                    <img src="img/slide-1.jpg" alt="" title="">                    
+                        <img src="img/slide-1.jpg" alt="" title="">                    
                     </div>
                 </div>
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
-                    <img src="img/slide-1.jpg" alt="" title="">            
+                        <img src="img/slide-1.jpg" alt="" title=""> 
+                     </div>   
                 </div>
+                    
 
 
                 <!--?php
@@ -738,7 +741,9 @@ a:hover{
 .clearfix:after{
     clear: both;
 }
-    .block7-row, .block8-row, .block9-row, .block11-row: after{
+    
+   /*ROW*/
+    .block7-row, .block8-row, .block9-row, .block11-row, block12-row: after{
     visibility: hidden;
         display: block;
         font-size: 0;
@@ -747,12 +752,9 @@ a:hover{
         height: 0; 
     }
                     
-    .block7-row, .block8-row, .block9-row, .block11-row { display: inline-block; }
-                    
-    .html . block7-row, .block8-row, .block9-row { height: 1% }                
-    .html . block11-row { height: 1% }
-                    
-    .block7-row, .block8-row, .block9-row, .block11-row { display: block; }
+    .block7-row, .block8-row, .block9-row, .block11-row, block12-row { display: inline-block; }                    
+    .html . block7-row, .block8-row, .block9-row, block11-row, block12-row { height: 1% } 
+    .block7-row, .block8-row, .block9-row, .block11-row, block12-row { display: block; }
                     
 /*    HEADER   */
 .contacts-information{
