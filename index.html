@@ -152,7 +152,7 @@ require "includes/config.php"
   padding: 10px 40px;
   border: 1px solid #CCC;
   border-radius: 15px;
-  background: #eee;
+  background: #000;
 }
 
 .carousel img {
@@ -477,22 +477,35 @@ require "includes/config.php"
                 <div class="content20-pic-pic-pic-pic-pic">
                     <div class="inner-content20-pic-pic-pic-pic-pic">
                     <!--
-             <?php
+                <?php
     
                 while( ($cat = mysqli_fetch_assoc($categories)) )
                 {
                 ?-->
+                    <img src="img/slide-1.jpg" alt="" title="">
+                    </div> 
+                </div>
+                <div class="content20-pic-pic-pic-pic-pic">
+                    <div class="inner-content20-pic-pic-pic-pic-pic">
+                    <img src="img/slide-1.jpg" alt="" title="">                    
+                    </div>
+                </div>
+                <div class="content20-pic-pic-pic-pic-pic">
+                    <div class="inner-content20-pic-pic-pic-pic-pic">
+                    <img src="img/slide-1.jpg" alt="" title="">            
+                </div>
+                <div class="content20-pic-pic-pic-pic-pic">
+                    <div class="inner-content20-pic-pic-pic-pic-pic">
+                    <img src="img/slide-1.jpg" alt="" title="">                    
+                    </div>
+                </div>
+                <div class="content20-pic-pic-pic-pic-pic">
+                    <div class="inner-content20-pic-pic-pic-pic-pic">
+                    <img src="img/slide-1.jpg" alt="" title="">            
+                </div>
 
-        
-            <ul>
-                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
-                <li><a href="#"><img src="img/slide-1.jpg" title=""></i></a></li>
-                <li><a href="#"><img src="img/slide-1.jpg" title=""></i></a></li>
-                <li><a href="#"><img src="img/slide-1.jpg" title=""></i></a></li>
-                <li><a href="#"><img src="img/slide-1.jpg" title=""></i></a></li>
-                <li><a href="#"><img src="img/slide-1.jpg" title=""></i></a></li>
-            </ul>
-             <!--?php
+
+                <!--?php
                 }
                 ?-->
                      
@@ -569,8 +582,8 @@ require "includes/config.php"
     $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
     ?-->
 <section>
-    <div class="block15-contacts-information-before-footer clearfix" >        
-        <div class="block15-static-info">
+    <div class="block15-contacts-information-before-footer-t-t-t-t clearfix" >        
+        <div class="block15-inner-static-info-t-t-t-t">
         <!---
              <?php
     
@@ -585,12 +598,21 @@ require "includes/config.php"
                     <!--h3 class="block15-title"><a href="#">About Us</a><h3></h3><p><br></p-->
                     <p>
                         <a href="#"><span class="block15-title">About Us</span></a>
-                        <br><span class="block15-subtitle">Supplier of superior quality stationary backup battery power products,
-                            UPS rentals and services that maximize critical power integrity and customer satisfaction.
+                        <br><span class="block15-subtitle">Supplier of superior quality
+                        <br> stationary backup battery power 
+                        <br> products, UPS rentals and services
+                            <br> that maximize critical power
+                            <br> integrity and customer satisfaction.
                             <br>
-                            <br>Sure Power, Inc. is a leading distributor for the following battery power products:
-                            CD Technologies, EnerSys and East Penn Manufacturing. Call today to find how we can help
-                            you and your organization with battery backup, UPS rentals and critical power system services.</span>
+                            <br>Sure Power, Inc. is a leading
+                            <br> distributor for the following battery
+                            <br> power products: CD Technologies,
+                            <br> EnerSys and East Penn
+                            <br> Manufacturing. Call today to find
+                            <br> how we can help you and your
+                            <br> organization with battery backup,
+                            <br> UPS rentals and critical power
+                            <br> system services.</span>
                     </p>
                 </li>
                 <li>
@@ -600,13 +622,16 @@ require "includes/config.php"
                         <br>
                         <span class="block15-subtitle"><a href="#">UPS 101</a>
                             <br>
-                            <br><a href="#">How Do You Rate?Understanding Battery</a>
+                            <br><a href="#">How Do You Rate?Understanding
+                            <br> Battery</a>
                             <br>
                             <br><a href="#">Ratings Beyond AA</a>
                             <br>
-                            <br><a href="#">Six Critical Needs for any Critical Power Maintenance Provider</a>
+                            <br><a href="#">Six Critical Needs for any Critical
+                            <br> Power Maintenance Provider</a>
                             <br>
-                            <br><a href="#">Are You at Risk for These Leading Causes of UPS Power Failure?</span>
+                            <br><a href="#">Are You at Risk for These Leading
+                            <br> Causes of UPS Power Failure?</span>
                     </p>
                 </li>
                  <li>
@@ -826,9 +851,9 @@ font-size:12px /*размер иконки 12 пикселей в ширину �
     padding: 0 100px;
                     
 }
- .menu { 
+.menu { 
      position: absolute;                   
- }                   
+}                   
 .navigation nav{
     float: left;
 }
@@ -858,9 +883,8 @@ nav li a:hover{
 /********************************************************4/
 /*  BLOCK4 slider bar */
 .block4-static-info-carusel{
-    float: right;
-    
-    position: absolute;                
+    margin: 0 auto;    
+    position: relative;                
 }
 
 /********************************************************5/
@@ -871,12 +895,14 @@ nav li a:hover{
 .block6-logo-section2-contacts-information1-text-nav{
     background: #bd2631;
     padding: 70px 100px;
+    position: absolute;
 }
 
 /*  BLOCK6 /+++++++++++++++++++++++++++++++++++++++ */
 .left-text-static-info{
     float: left;
     margin-top: 17px;
+    
 }
 .left-text-static-info li p:first-of-type{
     float: left;
@@ -950,9 +976,7 @@ margin-top: 30px;
 .block7-content-pic-pic-pic, .block8-content-pic-pic-pic, .block9-content-pic-pic-pic {
     background: none;
     padding: 0;
-    
-    
-
+    position: absolute;
 }
 .block7-inner-content-pic-pic-pic, .block8-inner-content-pic-pic-pic, .block9-inner-content-pic-pic-pic{
     
@@ -1018,6 +1042,7 @@ margin-top: 30px;
 .block10-static-info-sgr{
     background: #fffdfe;
     padding: 20px 100px;
+    position: absolute;
 }
 
 .block10-sgr-item:{
@@ -1065,6 +1090,7 @@ margin-top: 30px;
 /*  BLOCK11  */
     
 .block11-logo-section-upsl-logo-critical-text{
+    position: absolute;
     background: #3e302e;
     padding: 0;
 }
@@ -1092,7 +1118,7 @@ margin-top: 30px;
 }
 .example2 span .block11-block2-static-info-l{
     float: left;     
-    margin-left: 140px;
+    margin-left: 340px;
                    
 } 
  .example2 span .block11-title{                   
@@ -1144,9 +1170,10 @@ margin-top: 30px;
 /********************************************************12/
 /*  BLOCK12  PIC*/
 .block12-content-pic-pic-pic-pic-pic{
+    position: absolute;
     padding: 0;
 }
-.block11-inner-content-pic-pic-pic-pic-pic{
+.block12-inner-content-pic-pic-pic-pic-pic{
     
     width: 100%;
     float:left;
@@ -1223,15 +1250,29 @@ nav li a:hover{
 
 /********************************************************15/
 /*  BLOCK15  */
-.block15-contacts-information-before-footer{
+
+
+.block15-contacts-information-before-footer-t-t-t-t{
     background: #333;
     padding: 50px 50px;
+    position: absolute;
 }
 
-.block15-static-info{
-    float: right;
+.block15-inner-static-info-t-t-t-t{
+    float: left;
     margin-top: 17px;
+    width: 100%;    
+    min-height: 350px;
+
 }
+.content25-t-t-t-t{    
+    float:left;   
+    width: 20%; 
+}
+/*.content25-t-t-t-t: last-child{    
+    float:left;   
+    width: 20%; 
+}*/
 .block15-title{
     color: red;
     font-weight: 600;
@@ -1260,6 +1301,7 @@ nav li a:hover{
 }
 .block15-static-info ul li{
     padding-right: 35px;
+    padding-left: 35px;
     border-right: 1px solid #e6e6e6;
     margin-right: 20px;
 }
@@ -1268,7 +1310,7 @@ nav li a:hover{
     padding-right: 0;
     margin-right: 0;
 }    
-/*  BLOCK7r /++++++++++++++++++++++++++++++++++++++++*/
+/*  BLOCK7r /+++++++++++paddingami zadavit' text bez <br>+++++++++++++++++++++++++++++*/
 /*  BLOCK7rm /++++++++++++++++++++++++++++++++++++++++ */
 /*  BLOCK7m /++++++++++++++++++++++++++++++++++++++++ */
 /*  BLOCK7lm/++++++++++++++++++++++++++++++++++++++++ */
