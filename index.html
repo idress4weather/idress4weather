@@ -107,45 +107,7 @@ require "includes/config.php"
         </div>
     </div>
     <!--4-bg#040303-->
-    <!--?php 
-    $categories = mysqli_query($categories, "SELECT * FROM `block-4_categories` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?-->
-    <div class="block3 navigation clearfix" style="position: relative;">
-      <div class="menu">
-        <nav>
-
-      
-            <!--?php
-    
-                while( ($cat = mysqli_fetch_assoc($categories)) )
-                {
-                ?-->
-
         
-            <ul>
-                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
-                <li class="current"><a href="/">Home</a></li>
-                <li><a href="/pages/about.php">About</a></li>
-                <li><a href="/pages/Products">Products</a></li>
-                <li><a href="/pages/Services">Services</a></li>
-                <li><a href="/pages/Rentals">Rentals</a></li>
-                <li><a href="/pages/Learning">Learning</a></li>
-                <li><a href="/pages/Contact">Contact</a></li>
-                <!--?php
-                }
-            ?-->
-            </ul>
-        </nav>         
-      <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
-    </div>
- </div>
-</header>
-
-<!--4-carusel*********************************************-->
-<!--?php 
-    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
-    ?-->
-<section>    
    <style>
        .carousel {
   position: absolute;
@@ -273,7 +235,46 @@ require "includes/config.php"
       list.style.marginLeft = position + 'px';
     };
   </script>
-</section>
+
+    <!--?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block-4_categories` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?-->
+    <div class="block3 navigation clearfix" style="position: relative;">
+      <div class="menu">
+        <nav>
+
+      
+            <!--?php
+    
+                while( ($cat = mysqli_fetch_assoc($categories)) )
+                {
+                ?-->
+
+        
+            <ul>
+                <!--li class="current"><a href="/"><?php echo $cat['title'] ?></a></li-->
+                <li class="current"><a href="/">Home</a></li>
+                <li><a href="/pages/about.php">About</a></li>
+                <li><a href="/pages/Products">Products</a></li>
+                <li><a href="/pages/Services">Services</a></li>
+                <li><a href="/pages/Rentals">Rentals</a></li>
+                <li><a href="/pages/Learning">Learning</a></li>
+                <li><a href="/pages/Contact">Contact</a></li>
+                <!--?php
+                }
+            ?-->
+            </ul>
+        </nav>         
+      <div class="search"><i class="fa fa-search" aria-hidden="true"></i></div>
+    </div>
+ </div>
+</header>
+
+<!--4-carusel*********************************************-->
+<!--?php 
+    $categories = mysqli_query($categories, "SELECT * FROM `block_` WHERE `login` = '$login' AND `password` = '$password' = '$password' ");
+    ?-->
+
 <!--5-text-first-last-->
 
 <!--6----bg#bd2631**t#fff**************************************-->
