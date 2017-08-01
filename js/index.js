@@ -51,7 +51,7 @@ $(function() {
       $('.border').append('<p>Error: Could not load weather data!</p>');
     });
   /******************************************************/
-    var map;
+   /* var map;
   var geoJSON;
   var request;
   var gettingData = false;
@@ -60,7 +60,7 @@ $(function() {
   function initialize() {
     var mapOptions = {
       zoom: 4,
-      center: new google.maps.LatLng(location.lat, location.lng)/*AIzaSyCB7eXQgDDLJM1Ih386aUUlfMRt9n_oV0w*/
+      center: new google.maps.LatLng(location.lat, location.lng)
     };
 
     map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -193,10 +193,10 @@ $(function() {
     });
   };
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize);*/
 
   /********************************************************************************/
- //создаем инфоокно http://mycode.in.ua/js/google-maps/simple-gmap.html
+/* //создаем инфоокно http://mycode.in.ua/js/google-maps/simple-gmap.html
 var infowindow = new google.maps.InfoWindow({ 
   content: '<div class="content">Какой-то контент</div>'
 });
@@ -210,7 +210,7 @@ google.maps.event.addListener(map, 'click', function(event){
   if(currentInfoWindow != null){
     currentInfoWindow.close();
   }
-}
+}*/
   /******************************************************************/
   // code for ajax request to weather API
   function getWeatherInfo(url) {
