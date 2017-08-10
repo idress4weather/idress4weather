@@ -46,7 +46,7 @@ $(function() {
       getWeatherInfo(weatherUrl); //this function sends ajax request to weather API
 		// Отрисовка карты.
 
-        var map = new GMaps({
+        var imap = new GMaps({
 
             el: '#map',
 
