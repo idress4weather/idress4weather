@@ -38,21 +38,23 @@ $(function() {
       $(image).addClass('animated flipInX');
     });
   },
-		success: function(response) {
-      var location = response.location;
-			var lat = location.lat;
-			var lng = location.lng;
-			var weatherUrl = 'https://api.apixu.com/v1/current.json?key=c696097710604a5c8a4154155170607&q=' + latitude + ',' + longitude;
-      getWeatherInfo(weatherUrl); //this function sends ajax request to weather API
-		// Отрисовка карты.
+	  after:  function(response){ 
+	
+
+ 
+
+        // Текущие координаты.
+
+       var latitude = location.lat;
+			var longitude = location.lng;
 
         var imap = new GMaps({
 
             el: '#map',
 
-            lat: lat,
+            lat: latitude,
 
-            lng: lng
+            lng: longitude
 
         });
 
@@ -63,7 +65,16 @@ $(function() {
             lat: lat,
             lng: lng
 
-        });	
+        }); 
+	  },
+		success: function(response) {
+      var location = response.location;
+			var latitude = location.lat;
+			var longitude = location.lng;
+			var weatherUrl = 'https://api.apixu.com/v1/current.json?key=c696097710604a5c8a4154155170607&q=' + latitude + ',' + longitude;
+      getWeatherInfo(weatherUrl); //this function sends ajax request to weather API
+		// Отрисовка карты.
+	
 			
 		}
     }).fail(function() {
