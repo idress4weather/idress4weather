@@ -38,35 +38,10 @@ $(function() {
       $(image).addClass('animated flipInX');
     });
   },
-	  after:  function(response){ 
+	  
 	
 
- 
 
-        // Текущие координаты.
-
-       var latitude = location.lat;
-			var longitude = location.lng;
-
-        var imap = new GMaps({
-
-            el: '#map',
-
-            lat: latitude,
-
-            lng: longitude
-
-        });
-
- 
-
-        map.addMarker({
-
-            lat: lat,
-            lng: lng
-
-        }); 
-	  },
 		success: function(response) {
       var location = response.location;
 			var latitude = location.lat;
