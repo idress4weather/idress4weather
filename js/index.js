@@ -48,7 +48,15 @@ $(function() {
 			var longitude = location.lng;
 			var weatherUrl = 'https://api.apixu.com/v1/current.json?key=c696097710604a5c8a4154155170607&q=' + latitude + ',' + longitude;
       getWeatherInfo(weatherUrl); //this function sends ajax request to weather API
-		// Отрисовка карты.
+			/* var getWeather = function(northLat, eastLng, southLat, westLng) {
+    			gettingData = true;
+			var requestString = "http://api.openweathermap.org/data/2.5/box/city?bbox="
+                        + westLng + "," + northLat + "," //left top
+                        + eastLng + "," + southLat + "," //right bottom
+                        + map.getZoom()
+                        + "&cluster=yes&format=json"
+                        + "&APPID=" + openWeatherMapKey;
+getForecastInfo(requestString);// Отрисовка карты.*/
 	
 			
 		}
@@ -60,7 +68,7 @@ $(function() {
   var geoJSON;
   var request;
   var gettingData = false;
-  var openWeatherMapKey = "4b21fe0c4323ae251a754750e6cb5638"
+  var openWeatherMapKey = "4b21fe0c4323ae251a754750e6cb5638";
 
   function initialize() {
     var mapOptions = {
