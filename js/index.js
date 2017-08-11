@@ -73,7 +73,7 @@ getForecastInfo(requestString);// Отрисовка карты.*/
   function initialize() {
     var mapOptions = {
       zoom: 4,
-      center: new google.maps.LatLng(location.lat, location.lng)
+      center: new google.maps.LatLng(49.573544099999985, 34.39785000000006)
     };
 
     map = new google.maps.Map(document.getElementById('map-canvas'),
