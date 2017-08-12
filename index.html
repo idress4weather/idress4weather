@@ -135,25 +135,43 @@ transform: translate(-50%,0%) important;
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
+		<div class="navbar-header">
+                <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button-->
+			
+                  <span><a class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" style="margin-top: 8px; align: ctnter;">Menu</a></span> <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Menu</span-->
+			<a class="navbar-brand page-scroll" href="#page-top">
+                     
+        <!--i class="fa fa-play-circle"></i--><span class="feelslike_c"  style = 'cursor: pointer;' title="Click to feelslike ºF"></span><span class="feelslike_f"  style = 'cursor: pointer;' title="Click to feelslike ºC"></span>
+                <span><img class="icon" title="Have a nice day!"><!--span class="wind_dir" style="margin-right: 8px !Important;" title="Wind direction"></span--><!--span><img class="img" style="margin-right: 8px !Important;" src="img/kompas.png" alt=""--></span></span><span class="wind_kph" style = 'cursor: pointer;' title="Click to miles per hour"></span><span class="wind_mph"  style = 'cursor: pointer;' title="Click to mitres/second"></span></a>
+		   
+                      </div><!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#bottom-page"></a>
+                    </li>
+                    <li class="hidden">
+                        <a href="#top-page"></a>
+                    </li>
+                    <li>
+			    <!--
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
 		  
-                <a class="navbar-brand page-scroll" href="#page-top">
-                     
-        <!--i class="fa fa-play-circle"></i--><span class="feelslike_c"  style = 'cursor: pointer;' title="Click to feelslike ºF"></span><span class="feelslike_f"  style = 'cursor: pointer;' title="Click to feelslike ºC"></span>
-                <span><img class="icon" title="Have a nice day!"><!--span class="wind_dir" style="margin-right: 8px !Important;" title="Wind direction"></span--><!--span><img class="img" style="margin-right: 8px !Important;" src="img/kompas.png" alt=""--></span></span><span class="wind_kph" style = 'cursor: pointer;' title="Click to miles per hour"></span><span class="wind_mph"  style = 'cursor: pointer;' title="Click to mitres/second"></span></a>
-		   
-            </div>
+                
+	    </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <!--div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
+        	     <li class="hidden">
                         <a href="#page-top"></a>
-                    </li>
+                    </li-->
 		
 	
                     <li>
@@ -602,15 +620,15 @@ function openbox(id, toggler) {
 <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      /*#map {
-        height: 100%;
-      }*/
+      #map {
+        height: 10%;
+      }
       /* Optional: Makes the sample page fill the window. */
-      /*html, body {
-        height: 100%;
+      html, body {
+        height: 10%;
         margin: 0;
         padding: 0;
-      }*/
+      }
     </style>
     <!-- Map Section -->
     <div id="map"></div>
@@ -772,6 +790,11 @@ google.maps.event.addListener(map, 'click', function(event){
             <p>Copyright &copy; <a href="https://icontrolmy.com">icontrolmy.com</a> &copy; 2017</p>
         </div>
     </footer>
+	 <script src="js/jquery.js">
+    </script> <!-- Bootstrap Core JavaScript -->
+     
+    <script src="js/bootstrap.min.js">
+    </script> <!-- Script to Activate the Carousel -->
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
