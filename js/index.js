@@ -3,7 +3,7 @@ $(function () {
   
 // '2321088784.1677ed0.bde13057fffd4b30aad200715ee85b61'  https://api.wunderground.com/api/7f0451b8da14a202/conditions/forecast/q/49.5638034,34.4923746.json
   function initMap() {//apbsent if map-canvas
-        var map = new google.maps.Map(document.getElementById('map'), {//apbsent if map-canvas
+        var map = new google.maps.Map(document.getElementById('map1'), {//apbsent if map-canvas
           center: {lat: 49.573544099999985, lng:  34.39785000000006},//apbsent if map-canvas
           zoom: 6//apbsent if map-canvas
         });//apbsent if map-canvas
@@ -33,7 +33,7 @@ $(function () {
   $.ajax({
     async: true,
     crossDomain: true,
-    url: "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCB7eXQgDDLJM1Ih386aUUlfMRt9n_oV0w",
+    url: url,
     dataType: 'json',
     method: "POST",
     headers: {
