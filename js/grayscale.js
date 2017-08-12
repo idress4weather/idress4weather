@@ -28,8 +28,8 @@ $(function() {
 });
 
 // Closes the Responsive Menu on Menu Item Click
-$('.navbar-main-collapse ul li a').click(function() {
-    $(".navbar-main-collapse").collapse('hide');
+$('.navbar-collapse ul li a').click(function() {
+    $(".navbar-collapse").collapse('hide');
 });
 /*
 // Google Maps Scripts
