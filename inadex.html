@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Google Maps weather</title>
+    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=weather"></script>
+    
+
+</head>
+
+<body onload="generartiempo(36.745,-3.87665,'mapatiempo');">
+<div id="mapatiempo"></div>
+<style>
+#mapatiempo {
+width: 268px;
+height: 200px;
+border: 1px solid #AAAAA8;
+margin-bottom: 5px;
+margin-top: 15px;
+}
+</style>
+<script>
+	var mapOptions = {
+  zoom: 11,
+  center: new google.maps.LatLng(lat,lng,true),
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+var infowindow = new google.maps.InfoWindow();
+var map = new google.maps.Map(document.getElementById(divmapa),
+    mapOptions);
+
+var weatherLayer = new google.maps.weather.WeatherLayer({
+  temperatureUnits: google.maps.weather.TemperatureUnit.CELSIUS,
+  windSpeedUnit: google.maps.weather.WindSpeedUnit.KILOMETERS_PER_HOUR
+});
+
+</script>
+</body>
+</html>
