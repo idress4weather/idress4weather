@@ -860,12 +860,12 @@ userFeed.run();
   });
 	
 	
-	var map = null;
+	/*var map = null;
 // When the window has finished loading create our google map below
 google.maps.event.addDomListener(window, 'load', init);
 google.maps.event.addDomListener(window, 'resize', function() {
     map.setCenter(new google.maps.LatLng(-34.397, 150.644));
-});
+});*/
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
       // failed.", it means you probably did not give permission for the browser to
