@@ -32,6 +32,11 @@ var weatherLayer = new google.maps.weather.WeatherLayer({
   temperatureUnits: google.maps.weather.TemperatureUnit.CELSIUS,
   windSpeedUnit: google.maps.weather.WindSpeedUnit.KILOMETERS_PER_HOUR
 });
+	weatherLayer.setMap(weatherLayer.getMap() ? null : map);
+
+var cloudLayer = new google.maps.weather.CloudLayer();
+cloudLayer.setMap(map);
+}
 
 </script>
 </body>
