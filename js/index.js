@@ -871,7 +871,7 @@ google.maps.event.addDomListener(window, 'resize', function() {
       // failed.", it means you probably did not give permission for the browser to
       // locate you.
 
-      function initMap() {
+     /* function initMap() {
         var map = new google.maps.Map(document.getElementById('mymap'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 6,
@@ -983,6 +983,6 @@ google.maps.event.addDomListener(window, 'resize', function() {
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
-      }
+      }*/
 	
 });
